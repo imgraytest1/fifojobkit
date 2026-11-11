@@ -7,6 +7,30 @@
     ml('account', '2763294');
 </script>
 <!-- End MailerLite Universal -->
+<style id="qrsrc-css">
+.qrbtn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;padding:0}
+.qrbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#qrFull{position:fixed;inset:0;z-index:1000;background:#fff;color:#111;display:none;flex-direction:column;align-items:center;overflow:auto;padding:max(16px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom));font-family:system-ui,Arial,sans-serif;text-align:center}
+#qrFull.on{display:flex}
+#qrFull .qx{position:absolute;top:max(10px,env(safe-area-inset-top));right:12px;width:56px;height:56px;border:0;border-radius:50%;background:#111;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+#qrFull h2{margin:8px 56px 4px;font-size:22px}
+#qrFull label{display:block;font-weight:700;margin:12px 0 6px;font-size:16px}
+#qrFull select{font:600 18px system-ui,Arial;padding:12px;border-radius:10px;border:2px solid #111;background:#fff;color:#111;max-width:100%}
+#qrFull .qimg{width:min(78vw,60vh,380px);aspect-ratio:1;margin:14px auto 6px}
+#qrFull .qimg svg{width:100%;height:100%;display:block}
+#qrFull .qu{font-size:15px;color:#444;word-break:break-all;margin:0 0 10px}
+#qrFull .qs{width:min(100%,380px);box-sizing:border-box;padding:16px;border:0;border-radius:14px;background:#ff6a13;color:#111;font:800 20px system-ui,Arial;cursor:pointer;margin:6px 0}
+#qrFull .qrow{display:none;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+#qrFull .qrow.on{display:flex}
+#qrFull .qrow a,#qrFull .qrow button{padding:12px 16px;border-radius:12px;border:2px solid #111;background:#fff;color:#111;font:700 17px system-ui,Arial;text-decoration:none;cursor:pointer}
+#srcCard{position:fixed;left:0;right:0;bottom:0;z-index:900;display:none;justify-content:center;padding:0 10px max(10px,env(safe-area-inset-bottom))}
+#srcCard.on{display:flex}
+#srcCard .box{width:100%;max-width:560px;background:var(--surface);color:var(--ink);border:2px solid var(--hivis);border-radius:16px;padding:16px;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
+#srcCard h3{margin:0 0 4px;font-size:20px}#srcCard p{margin:0 0 10px;color:var(--muted);font-size:15px}
+#srcCard select{width:100%;box-sizing:border-box;font-size:18px;padding:12px;margin:0 0 8px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+#srcCard .r{display:flex;gap:8px;margin-top:6px}#srcCard .r button{flex:1;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:700 17px system-ui,Arial;cursor:pointer}
+#srcCard .r .go{background:var(--hivis);color:var(--hivis-ink);border-color:var(--hivis)}
+</style>
 </head><body>
 <title>FIFO Job Kit</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -394,6 +418,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
   <div class="inner">
     <a class="logolink" href="https://www.youtube.com/@awesomealchemy1" target="_blank" rel="noopener" aria-label="Awesome Alchemy on YouTube"><img class="logo" src="data:image/webp;base64,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" alt="Awesome Alchemy"></a>
     <div class="brand"><b>FIFO Job Kit</b><span>Awesome Alchemy</span></div>
+    <button type="button" class="qrbtn" id="qrOpen" aria-label="Show QR code to share the kit"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h3M20 17v4"/></svg></button>
     <label class="langsel"><span class="sr-only">Language</span><select id="uiLang" aria-label="Language"></select></label>
     <a class="homebtn" href="#home" id="homeBtn" hidden>Home</a>
   </div>
@@ -2407,6 +2432,7 @@ function fifoQR(text){
   return best;
 }
 function fifoQRsvg(text,quiet){ const G=fifoQR(text), N=G.length, q=quiet??4, S=N+2*q; let d=''; for(let r=0;r<N;r++) for(let c=0;c<N;c++) if(G[r][c]) d+=`M${c+q} ${r+q}h1v1h-1z`; return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${S} ${S}" shape-rendering="crispEdges" role="img" aria-label="QR code"><rect width="${S}" height="${S}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`; }
+window.fifoQRsvg=fifoQRsvg;
 
 
 const hdr=document.querySelector('.bar .logo'); if(hdr) $('posterLogo').src=hdr.src;
@@ -3934,5 +3960,81 @@ setTimeout(render,150);
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39ea7f295530451e9b3709dc6e0b5108"}'></script><!-- End Cloudflare Web Analytics -->
 <script>
 (function(){var b=document.getElementById('tipsBtn'),f=document.getElementById('tipsForm');if(!b||!f)return;b.addEventListener('click',function(){var open=f.hidden;f.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');b.textContent=open?'Hide sign-up':'Get free FIFO tips';});})();
+</script>
+<div id="qrFull" role="dialog" aria-modal="true" aria-label="Share the FIFO Job Kit with a QR code">
+  <button type="button" class="qx" id="qrClose" aria-label="Close">&#x2715;</button>
+  <h2>📲 Scan to get the free FIFO Job Kit</h2>
+  <label for="qrSpot">Sharing from:</label>
+  <select id="qrSpot"></select>
+  <div class="qimg" id="qrImg" aria-label="QR code"></div>
+  <p class="qu" id="qrLink"></p>
+  <button type="button" class="qs" id="qrShare">🔗 Share link</button>
+  <div class="qrow" id="qrRow"><a id="qrWa" target="_blank" rel="noopener">💬 WhatsApp</a><a id="qrSms">📱 Text</a><button type="button" id="qrCopy">📋 Copy</button></div>
+</div>
+<div id="srcCard" role="dialog" aria-label="Where did you find this?"><div class="box">
+  <div id="srcAsk">
+    <h3>👋 Where did you find this?</h3>
+    <p>Optional. Helps us reach more people like you. Stays on your phone.</p>
+    <select id="srcSel" aria-label="Where did you find this?"><option value="">Choose one…</option><option value="poster">Poster</option><option value="gray">Referred by Gray</option><option value="video">Video (TikTok / Reels / Shorts)</option><option value="facebook">Facebook group</option><option value="mate">A mate sent it</option><option value="google">Google search</option><option value="other">Somewhere else</option></select>
+    <select id="srcSub" aria-label="Which poster?" hidden><option value="">Which spot?</option><option value="quokka">Quokka</option><option value="spiral">Spiral</option><option value="jobs">Jobs and Skills Centre</option><option value="rsea">RSEA</option><option value="wasafety">WA Safety</option><option value="other">Another spot</option></select>
+    <div class="r"><button type="button" id="srcSkip">Skip</button><button type="button" class="go" id="srcSave">Save</button></div>
+  </div>
+  <div id="srcDone" hidden>
+    <h3>✅ Thanks!</h3>
+    <p id="srcDoneTxt"></p>
+    <div class="r"><button type="button" id="srcTell" hidden>✉️ Tell Gray (optional)</button><button type="button" class="go" id="srcOk">Done</button></div>
+  </div>
+</div></div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var BASE='https://fifojobkit.com';
+var TELL_GRAY=false; /* set true to show the optional "Tell Gray" button */
+var SPOTS=[['general','General (everyone)','/?s=gray'],['quokka','Quokka','/quokka/'],['spiral','Spiral','/spiral/'],['jobs','Jobs and Skills Centre','/jobs/'],['rsea','RSEA','/rsea/'],['wasafety','WA Safety','/wasafety/']];
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+var sel=$('qrSpot'); SPOTS.forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=x[1];sel.appendChild(o)});
+var saved=ls('fifokit_qrspot'); if(saved&&SPOTS.some(function(x){return x[0]===saved}))sel.value=saved;
+function url(){var x=SPOTS.filter(function(y){return y[0]===sel.value})[0]||SPOTS[0];return x[0]==='general'?BASE:BASE+x[2]}
+function shareUrl(){var x=SPOTS.filter(function(y){return y[0]===sel.value})[0]||SPOTS[0];return BASE+x[2]}
+function draw(){var u=shareUrl();try{$('qrImg').innerHTML=window.fifoQRsvg(u,2)}catch(e){$('qrImg').textContent='QR not available'}$('qrLink').textContent=u.replace('https://','');
+  var t=encodeURIComponent('Looking for FIFO work? This free kit shows the tickets you need, your real pay after tax and where the jobs are: '+u);
+  $('qrWa').href='https://wa.me/?text='+t;$('qrSms').href='sms:?&body='+t}
+var lock=null;
+function wake(){try{if(navigator.wakeLock&&$('qrFull').classList.contains('on'))navigator.wakeLock.request('screen').then(function(l){lock=l}).catch(function(){})}catch(e){}}
+function open(){draw();$('qrFull').classList.add('on');$('qrRow').classList.remove('on');wake();$('qrClose').focus()}
+function close(){$('qrFull').classList.remove('on');try{if(lock){lock.release();lock=null}}catch(e){}}
+$('qrOpen').addEventListener('click',open);$('qrClose').addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')wake()});
+sel.addEventListener('change',function(){ls('fifokit_qrspot',sel.value);draw()});
+$('qrShare').addEventListener('click',function(){var u=shareUrl();if(navigator.share){navigator.share({title:'FIFO Job Kit',text:'Free help to get FIFO work',url:u}).catch(function(){})}else{$('qrRow').classList.add('on')}});
+$('qrCopy').addEventListener('click',function(){var u=shareUrl();try{navigator.clipboard.writeText(u).then(function(){$('qrCopy').textContent='✅ Copied'})}catch(e){}});
+
+/* Where did you find this? */
+var POSTERS={quokka:1,spiral:1,jobs:1,rsea:1,wasafety:1};
+var LABEL={poster:'a poster',gray:'Gray',video:'a video',facebook:'a Facebook group',mate:'a mate',google:'Google',other:'somewhere else'};
+var param=''; try{param=(new URLSearchParams(location.search).get('s')||'').toLowerCase()}catch(e){}
+var pre=null; if(POSTERS[param])pre={src:'poster',sub:param}; else if(LABEL[param])pre={src:param,sub:''};
+if(pre&&!ls('fifokit_src')){ls('fifokit_src',JSON.stringify({src:pre.src,sub:pre.sub,auto:1}))}
+var card=$('srcCard');
+function subToggle(){$('srcSub').hidden=($('srcSel').value!=='poster')}
+$('srcSel').addEventListener('change',subToggle);
+function finish(skip){ls('fifokit_srcdone','1');if(skip){card.classList.remove('on')}}
+$('srcSkip').addEventListener('click',function(){finish(true)});
+$('srcSave').addEventListener('click',function(){var v=$('srcSel').value; if(!v){finish(true);return}
+  var o={src:v,sub:v==='poster'?$('srcSub').value:'',t:Date.now()};ls('fifokit_src',JSON.stringify(o));finish(false);
+  $('srcAsk').hidden=true;$('srcDone').hidden=false;$('srcDoneTxt').textContent='Saved on your phone only. Nothing was sent.';
+  $('srcTell').hidden=!TELL_GRAY});
+$('srcOk').addEventListener('click',function(){card.classList.remove('on')});
+$('srcTell').addEventListener('click',function(){var o={};try{o=JSON.parse(ls('fifokit_src')||'{}')}catch(e){}
+  var w=LABEL[o.src]||'somewhere'; if(o.src==='poster'&&o.sub)w+=' ('+o.sub+')';
+  location.href='mailto:fifojobkit@gmail.com?subject='+encodeURIComponent('Found the FIFO Job Kit')+'&body='+encodeURIComponent('G\'day Gray, I found the FIFO Job Kit through '+w+'.')});
+if(!ls('fifokit_srcdone')){
+  var o0=null;try{o0=JSON.parse(ls('fifokit_src')||'null')}catch(e){}
+  if(pre){$('srcSel').value=pre.src;subToggle();if(pre.src==='poster')$('srcSub').value=pre.sub}
+  else if(o0){ls('fifokit_srcdone','1')}
+  if(!ls('fifokit_srcdone'))setTimeout(function(){card.classList.add('on')},2500);
+}
+})();
 </script>
 </body></html>

@@ -1390,7 +1390,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <div class="vhead"><h2 class="big2">🥥 Coconut oil morning routine</h2><p class="lede">Oleation means rubbing a little oil over your skin before you shower. It leaves skin soft and helps it hold moisture in hot, dry and dusty work.</p></div>
     <div class="panel">
       <h3>⚠️ Not a sunscreen</h3>
-      <p class="warnp">Coconut oil gives only very weak sun protection (about SPF 1 to 8 in tests). It does not replace sunscreen. Australia's UV is very high, and oil on skin in strong sun can make burning worse. Use it before your shower, then put real sunscreen on dry skin.</p>
+      <p class="warnp">Coconut oil gives only very weak sun protection (about SPF 1 to 8 in tests). It does not replace proper sun protection. Australia's UV is very high, and oil on skin in strong sun can make burning worse. Use the oil before your shower, then put a zinc-based sunscreen on dry skin.</p>
     </div>
     <div class="panel">
       <h3>☀️ The best way, step by step <span class="tpill">10 min</span></h3>
@@ -1399,8 +1399,16 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
         <li><span><b>Warm it.</b> Scoop about 1 tablespoon of virgin (cold-pressed) coconut oil into your hands. It melts on contact with warm skin.</span></li>
         <li><span><b>Rub it all over.</b> Use long strokes on arms and legs and small circles on joints. Do 3 to 5 minutes, head to toe. A thin layer is enough.</span></li>
         <li><span><b>Wait 5 minutes</b> so it soaks in, then have a warm (not hot) shower. Use soap only where you need it, such as underarms, groin and feet.</span></li>
-        <li><span><b>Dry off, then sunscreen.</b> Pat dry, wait a few minutes, then put on SPF 50+ broad-spectrum sunscreen about 20 minutes before going outside. Add a hat, long sleeves and sunglasses.</span></li>
+        <li><span><b>Dry off, then zinc sunscreen.</b> Pat dry, wait a few minutes, then put on a zinc-based (mineral) sunscreen, SPF 50+ and water-resistant, about 20 minutes before going outside. Reapply every 2 hours and after sweating. Add a hat, long sleeves and sunglasses.</span></li>
       </ol>
+    </div>
+    <div class="panel">
+      <h3>🧴 Zinc-based sunscreen options</h3>
+      <p>Zinc oxide is a natural mineral. It sits on top of your skin and blocks UV. Look for <b>zinc oxide as the only active ingredient</b>, SPF 50+, and read the full ingredient list on the label.</p>
+      <p><b>WotNot Natural Sunscreen SPF 50+</b> (125 g)<br>Zinc oxide 22.7%. The rest is mostly plant oils and waxes (coconut oil, castor oil, candelilla wax, linseed oil, vitamin E). About A$28 at one Australian shop (RRP A$32.95). The page I checked did not say if it is non-nano or water resistant, so check the label. <a href="https://www.aussiehealthproducts.com.au/wotnot-naturals-natural-sunscreen-spf-50-125g.php" target="_blank" rel="noopener">See listing</a></p>
+      <p><b>WotNot Natural Zinc Sunscreen Stick SPF 50</b> (45 g)<br>Handy for nose, ears and cheeks on site. Check the label for the full ingredients. <a href="https://www.organicsonabudget.com.au/products/wotnot-natural-zinc-sunscreen-stick-spf-50-45g" target="_blank" rel="noopener">See listing</a></p>
+      <p><b>Invisible Zinc Face + Body SPF 50</b><br>Zinc oxide is the only active, and it rubs in clear. It has a longer ingredient list that includes silicones and preservatives, so it is not all-natural. <a href="https://skinsort.com/products/invisible-zinc/face-body-mineral-sunscreen-spf-50" target="_blank" rel="noopener">See ingredients</a></p>
+      <p class="small mutedt">Zinc can leave a white tint, so rub it in well. Ingredients and prices change, so always check the label. The TGA says zinc oxide nanoparticles in sunscreen are not likely to cause harm and found no cancer link (<a href="https://tga.gov.au/node/285401" target="_blank" rel="noopener">TGA</a>). General information, not medical advice.</p>
     </div>
     <div class="panel">
       <h3>🦺 Site and camp tips</h3>
@@ -3901,7 +3909,7 @@ $('qSave').addEventListener('click',function(){ setMode('work'); setTimeout(func
 /* ---------- search ---------- */
 var EXTRA=[['Tax, take-home pay, payslip','#pay','tax pay payslip wage salary overtime'],['Super (retirement money)','#super','super superannuation retirement dasp'],['Working holiday visa year','#whm','visa whv 417 462 working holiday second third year 88 days'],
  ['Tickets & training money','#training','white card ticket licence course training refund forklift heights'],['Scam check','#scam','scam fake fraud pay upfront'],['Resume check','#resume','resume cv'],['Interview practice','#interview','interview questions'],
- ['Rights at work','#rights','rights unfair pay safety bullying fair work'],['Morning breath test (alcohol)','#breath','alcohol breath test breathalyser blow zero limit drinking morning drug and alcohol'],['Hydration and electrolytes','#hydrate','water hydration electrolyte magnesium potassium sodium hydralyte heat cramps salt'],['Medical test prep','#medical','medical test blood urine drug alcohol hearing fitness scan x-ray pre-employment lab'],['Coconut oil morning routine','#skin','coconut oil skin sun sunscreen oleation shower morning moisturise'],['Wellbeing & help lines','#wellbeing','help lifeline mental sad stress lonely sleep'],['Daily Reset & breathing','#twell','habit breathing routine gratitude mood'],
+ ['Rights at work','#rights','rights unfair pay safety bullying fair work'],['Morning breath test (alcohol)','#breath','alcohol breath test breathalyser blow zero limit drinking morning drug and alcohol'],['Hydration and electrolytes','#hydrate','water hydration electrolyte magnesium potassium sodium hydralyte heat cramps salt'],['Medical test prep','#medical','medical test blood urine drug alcohol hearing fitness scan x-ray pre-employment lab'],['Coconut oil morning routine','#skin','coconut oil skin sun sunscreen zinc oleation shower morning moisturise'],['Wellbeing & help lines','#wellbeing','help lifeline mental sad stress lonely sleep'],['Daily Reset & breathing','#twell','habit breathing routine gratitude mood'],
  ['Savings goal & manifest','#tgoals','goal savings manifest house wallpaper badge'],['Money per swing calculator','#tmoney','money currency euro pound swing pay exchange'],['Swing planner & flights','#swings','roster swing flight fly days off'],
  ['Find jobs with Claude','#find','job jobs search apply find'],['My applications','#tracker','applications tracker follow up'],['New arrival checklist','#newcomer','tfn bank phone abn arrival new'],['Tax deduction log','#home','deduction tax return expenses receipts boots ppe']];
 function index(){ var out=EXTRA.map(function(e){return {t:e[0],h:e[1],k:(e[0]+' '+e[2]).toLowerCase()}});

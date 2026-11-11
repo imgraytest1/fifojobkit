@@ -10,7 +10,7 @@
 <style id="qrsrc-css">
 .qrbtn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;padding:0}
 .qrbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#qrFull{position:fixed;inset:0;z-index:1000;background:#fff;color:#111;display:none;flex-direction:column;align-items:center;overflow:auto;padding:max(16px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom));font-family:system-ui,Arial,sans-serif;text-align:center}
+#qrFull{position:fixed;inset:0;padding-bottom:120px!important;z-index:1000;background:#fff;color:#111;display:none;flex-direction:column;align-items:center;overflow:auto;padding:max(16px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom));font-family:system-ui,Arial,sans-serif;text-align:center}
 #qrFull.on{display:flex}
 #qrFull .qx{position:absolute;top:max(10px,env(safe-area-inset-top));right:12px;width:56px;height:56px;border:0;border-radius:50%;background:#111;color:#fff;font-size:30px;line-height:1;cursor:pointer}
 #qrFull h2{margin:8px 56px 4px;font-size:22px}
@@ -24,7 +24,7 @@
 #qrFull .qrow.on{display:flex}
 #qrFull .qrow a,#qrFull .qrow button{padding:12px 16px;border-radius:12px;border:2px solid #111;background:#fff;color:#111;font:700 17px system-ui,Arial;text-decoration:none;cursor:pointer}
 .bar .inner{gap:8px}.qrbtn{width:40px;height:40px}.bar .brand span{letter-spacing:.05em;font-size:11px}
-#srcCard{position:fixed;left:0;right:0;bottom:0;z-index:900;display:none;justify-content:center;padding:0 10px max(10px,env(safe-area-inset-bottom))}
+#srcCard{position:fixed;left:0;right:0;bottom:130px;z-index:900;display:none;justify-content:center;padding:0 10px max(10px,env(safe-area-inset-bottom))}
 #srcCard.on{display:flex}
 #srcCard .box{width:100%;max-width:560px;background:var(--surface);color:var(--ink);border:2px solid var(--hivis);border-radius:16px;padding:16px;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
 #srcCard h3{margin:0 0 4px;font-size:20px}#srcCard p{margin:0 0 10px;color:var(--muted);font-size:15px}
@@ -1556,7 +1556,7 @@ window.FIFO_SETTINGS={
   // {name:'Sam', trade:'Electrician', state:'WA', weeks:3, quote:'...', goal:'House deposit', video:'https://...'}
   stories:[],
   // The public link people share (change to your domain later)
-  kitUrl:'https://fifojobkit.com',
+  kitUrl:'https://fifojobkit.com/mate/',
   // When each set of figures was last checked
   checked:{ tax:'Nov 2026 (ATO 2026–27 rates)', super:'Nov 2026 (returns to 30 Jun and 30 Sep 2026)', training:'Nov 2026', fees:'Nov 2026' }
 };
@@ -3456,7 +3456,7 @@ $('mhShare').addEventListener('click',function(){
   x.fillStyle='#ff7a3d'; x.beginPath(); if(x.roundRect){x.roundRect(190,990,700,120,30)}else{x.rect(190,990,700,120)} x.fill();
   x.fillStyle='#141414'; x.font='900 64px system-ui,Arial,sans-serif'; x.fillText('fifojobkit.com',540,1072);
   x.fillStyle='#a9c6b1'; x.font='500 34px system-ui,Arial,sans-serif'; x.fillText('Free FIFO Job Kit · Example only',540,1200);
-  var txt='My FIFO savings goal: '+fmt(d.goal,d.cur)+' in '+d.n+' swings 🏡 Work out yours free: https://fifojobkit.com';
+  var txt='My FIFO savings goal: '+fmt(d.goal,d.cur)+' in '+d.n+' swings 🏡 Work out yours free: https://fifojobkit.com/mate/';
   c.toBlob(function(b){
     var f=null; try{f=new File([b],'my-fifo-goal.png',{type:'image/png'})}catch(e){}
     if(f&&navigator.canShare&&navigator.canShare({files:[f]})){ navigator.share({files:[f],text:txt}).catch(function(){}); return; }
@@ -3586,7 +3586,7 @@ function badgeCard(emoji,title,sub){
   return c;
 }
 $('celShare').addEventListener('click',function(){ if(!cur||!cur.share) return; var sh=cur.share;
-  badgeCard(sh.e,sh.t,sh.s).toBlob(function(b){ saveImage(b,'fifo-badge.png',sh.t+' '+sh.e+' with the free FIFO Job Kit: https://fifojobkit.com',null); closeCel(); },'image/png'); });
+  badgeCard(sh.e,sh.t,sh.s).toBlob(function(b){ saveImage(b,'fifo-badge.png',sh.t+' '+sh.e+' with the free FIFO Job Kit: https://fifojobkit.com/mate/',null); closeCel(); },'image/png'); });
 
 /* ---------- Badges ---------- */
 var BADGES=[
@@ -3623,11 +3623,11 @@ if($('mfCal')) $('mfCal').addEventListener('click',function(){
   var r=($('mhRos')?$('mhRos').value:'14,7,12').split(',').map(Number), every=r[0]+r[1];
   var d=new Date(end+'T00:00:00'), e=new Date(d); e.setDate(e.getDate()+1);
   var ymd=function(x){return x.getFullYear()+String(x.getMonth()+1).padStart(2,'0')+String(x.getDate()).padStart(2,'0')};
-  var url='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('✨ FIFO swing check-in')+'&dates='+ymd(d)+'/'+ymd(e)+'&recur='+encodeURIComponent('RRULE:FREQ=DAILY;INTERVAL='+every)+'&details='+encodeURIComponent('Last day of swing! Open the FIFO Job Kit, tick your swing and see your savings grow: https://fifojobkit.com');
+  var url='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('✨ FIFO swing check-in')+'&dates='+ymd(d)+'/'+ymd(e)+'&recur='+encodeURIComponent('RRULE:FREQ=DAILY;INTERVAL='+every)+'&details='+encodeURIComponent('Last day of swing! Open the FIFO Job Kit, tick your swing and see your savings grow: https://fifojobkit.com/mate/');
   window.open(url,'_blank','noopener'); });
 if($('mfRace')) $('mfRace').addEventListener('click',function(){
   var d=window.FIFO_MH||{}, f=((g('fifokit_mf',{})||{}).for||'').trim();
-  var t=d.goal?('🏁 I\'m racing you to our savings goals! I\'m saving '+fmt(d.goal,d.cur)+(f?' for '+f:'')+': '+d.n+' swings. Set your goal free and let\'s see who gets there first: https://fifojobkit.com'):'🏁 Race me to our savings goals! Set yours free: https://fifojobkit.com';
+  var t=d.goal?('🏁 I\'m racing you to our savings goals! I\'m saving '+fmt(d.goal,d.cur)+(f?' for '+f:'')+': '+d.n+' swings. Set your goal free and let\'s see who gets there first: https://fifojobkit.com/mate/'):'🏁 Race me to our savings goals! Set yours free: https://fifojobkit.com/mate/';
   if(navigator.share){ navigator.share({text:t}).catch(function(){}); } else { window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener'); } });
 
 /* ---------- Daily Reset ---------- */
@@ -3994,7 +3994,7 @@ var TELL_GRAY=false; /* set true to show the optional "Tell Gray" button */
 var SPOTS=[['general','General (everyone)','/?s=gray'],['quokka','Quokka','/quokka/'],['spiral','Spiral','/spiral/'],['jobs','Jobs and Skills Centre','/jobs/'],['rsea','RSEA','/rsea/'],['wasafety','WA Safety','/wasafety/']];
 function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
 var sel=$('qrSpot'); SPOTS.forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=x[1];sel.appendChild(o)});
-var saved=ls('fifokit_qrspot'); if(saved&&SPOTS.some(function(x){return x[0]===saved}))sel.value=saved;
+
 function url(){var x=SPOTS.filter(function(y){return y[0]===sel.value})[0]||SPOTS[0];return x[0]==='general'?BASE:BASE+x[2]}
 function shareUrl(){var x=SPOTS.filter(function(y){return y[0]===sel.value})[0]||SPOTS[0];return BASE+x[2]}
 function draw(){var u=shareUrl();try{$('qrImg').innerHTML=window.fifoQRsvg(u,2)}catch(e){$('qrImg').textContent='QR not available'}$('qrLink').textContent=u.replace('https://','');
@@ -4002,12 +4002,12 @@ function draw(){var u=shareUrl();try{$('qrImg').innerHTML=window.fifoQRsvg(u,2)}
   $('qrWa').href='https://wa.me/?text='+t;$('qrSms').href='sms:?&body='+t}
 var lock=null;
 function wake(){try{if(navigator.wakeLock&&$('qrFull').classList.contains('on'))navigator.wakeLock.request('screen').then(function(l){lock=l}).catch(function(){})}catch(e){}}
-function open(){draw();$('qrFull').classList.add('on');$('qrRow').classList.remove('on');wake();$('qrClose').focus()}
+function open(){sel.value='general';draw();$('qrFull').classList.add('on');$('qrRow').classList.remove('on');wake();$('qrClose').focus()}
 function close(){$('qrFull').classList.remove('on');try{if(lock){lock.release();lock=null}}catch(e){}}
 $('qrOpen').addEventListener('click',open);$('qrClose').addEventListener('click',close);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')wake()});
-sel.addEventListener('change',function(){ls('fifokit_qrspot',sel.value);draw()});
+sel.addEventListener('change',draw);
 $('qrShare').addEventListener('click',function(){var u=shareUrl();if(navigator.share){navigator.share({title:'FIFO Job Kit',text:'Free help to get FIFO work',url:u}).catch(function(){})}else{$('qrRow').classList.add('on')}});
 $('qrCopy').addEventListener('click',function(){var u=shareUrl();try{navigator.clipboard.writeText(u).then(function(){$('qrCopy').textContent='✅ Copied'})}catch(e){}});
 

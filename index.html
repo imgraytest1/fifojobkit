@@ -369,6 +369,7 @@ dl.words dd{margin:2px 0 0;color:var(--muted)}
 .mfx{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.mfx button{padding:11px 6px;border:0;border-radius:8px;font:700 15px var(--f-body);cursor:pointer;background:rgba(255,255,255,.14);color:#fff}
 .mfcal{display:block;font-size:13px;color:#e8f5ec;margin-top:10px}.mfcal input{margin-top:4px}
 .wkrow select{font:16px var(--f-body);padding:10px 2px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);max-width:104px}.wksplit{font-size:14px;color:var(--muted);margin-top:6px}.mlist{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}.tpill{display:inline-block;background:var(--chip);border-radius:999px;padding:2px 10px;font-size:13px;font-weight:600;margin-right:6px}.stepn{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}.stepn li{counter-increment:s;display:flex;gap:10px}.stepn li:before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--hivis);color:var(--hivis-ink);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}.warnp{background:var(--chip);border-left:4px solid var(--hivis);padding:10px 12px;border-radius:4px;margin:0}
+.mtext{width:100%;box-sizing:border-box;font:15px var(--f-body);padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);resize:vertical}.emailmenu .mcopy{width:100%;margin:6px 0}.emailmenu .mhint{display:block;width:100%;margin-top:6px}.qrfull{position:fixed;inset:0;z-index:9999;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}.qrbig{width:min(94vw,64vh);aspect-ratio:1}.qrbig svg{width:100%;height:100%;display:block}.qrhint{position:absolute;top:10px;left:0;right:0;text-align:center;font:14px system-ui,Arial;color:#666}
 .wnav{display:flex;flex-direction:column;gap:10px;margin-top:16px}.wnav a{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--hivis);border-radius:8px;padding:12px 14px;text-decoration:none;color:var(--ink)}.wnav .wi{font-size:26px;line-height:1.1;flex:none}.wnav b{display:block;font-size:17px;line-height:1.2}.wnav .d{display:block;font-size:14px;color:var(--muted);line-height:1.35;margin-top:3px}
 .rcbar{display:flex;gap:6px;margin-top:8px}.rcbar .wkcopy{width:auto;flex:1;margin-top:0;white-space:normal;line-height:1.2;padding:10px 8px}.rcthumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.rcthumbs:empty{display:none}.rcw{position:relative;display:inline-block}.rcth{width:56px;height:56px;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:var(--chip);cursor:pointer;display:block}.rcw button{position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);font-size:12px;padding:0;cursor:pointer}.wklist li.rcli{display:block}.rctop{display:flex;justify-content:space-between;align-items:center;gap:6px}.rctop .amt{flex:1;text-align:left;background:none;border:0;color:var(--ink);font:15px var(--f-body);padding:0;cursor:pointer}.rcview{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:12px}.rcview img{max-width:100%;max-height:100%;object-fit:contain}.rcview button{position:absolute;top:12px;right:12px;border:0;border-radius:8px;padding:10px 16px;font:700 16px var(--f-body);background:#fff;color:#000;cursor:pointer}.rcexp{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.rcexp select{font:16px var(--f-body);padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;margin-top:4px}
 .tips{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:16px}.tips h2{margin:0 0 4px;font-size:20px}.tips p{margin:0 0 10px;color:var(--muted);font-size:15px}.tips .btn{width:100%;justify-content:center}#tipsForm{margin-top:12px}#tipsForm .ml-form-embedContent{display:none!important}
@@ -1053,6 +1054,8 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     </div>
     <div class="panel">
       <button type="button" class="btn primary" data-email="mate" style="align-self:flex-start">🤝 Share with a mate</button>
+      <button type="button" class="btn ghost" id="qrQuokka" style="align-self:flex-start">🐨 Show Quokka QR code (full screen)</button>
+      <p class="small mutedt">The Quokka QR fills the whole screen so friends can scan it from your phone. Tap anywhere to close.</p>
       <label class="f" for="qrUrl">Link the QR code opens<input id="qrUrl" type="text" value="https://fifojobkit.com"></label>
       <p class="small mutedt" id="qrNote">Change this to your own web address once you have one. The page must be shared publicly for the code to work for others.</p>
     </div>
@@ -3020,7 +3023,16 @@ document.addEventListener('click',e=>{
   if(!menu){ menu=document.createElement('div'); menu.className='emailmenu'; (btn.closest('.row,.actions,.matebar')||btn).after(menu); }
   if(!L.short){ try{ navigator.clipboard.writeText(body+footer).catch(()=>{}); }catch(x){} }
   menu.hidden=false;
-  menu.innerHTML=`<span class="small mutedt">${L.short?'Send it by:':'Long text copied. Choose an app, then paste it in:'}</span>
+  const kit=(window.FIFO_SETTINGS&&window.FIFO_SETTINGS.kitUrl)||'https://fifojobkit.com/mate/', e2=encodeURIComponent, isMate=btn.dataset.email==='mate';
+  const social=isMate?`<span class="small mutedt mhint">Post it on social media:</span>
+    <a class="sbtn ghost" href="https://www.facebook.com/sharer/sharer.php?u=${e2(kit)}" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="sbtn ghost" href="https://x.com/intent/post?text=${e2('Free tools for FIFO and DIDO jobs: find jobs, check your resume and pay, spot scams.')}&url=${e2(kit)}" target="_blank" rel="noopener">𝕏 X</a>
+    <a class="sbtn ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=${e2(kit)}" target="_blank" rel="noopener">💼 LinkedIn</a>
+    <a class="sbtn ghost" href="https://www.reddit.com/submit?url=${e2(kit)}&title=${e2('Free FIFO job kit for newcomers')}" target="_blank" rel="noopener">👽 Reddit</a>
+    <span class="small mutedt mhint">Instagram, TikTok and Messenger: tap Copy, then paste it into your story, bio or message.</span>`:'';
+  menu.innerHTML=`<textarea class="mtext" rows="4" readonly aria-label="Message to copy"></textarea>
+    <button type="button" class="sbtn mcopy">📋 Copy message</button>
+    <span class="small mutedt">${L.short?'Or send it by:':'Choose an app, then paste it in:'}</span>
     <a class="sbtn ghost" href="${L.gmail}" target="_blank" rel="noopener">✉️ Gmail</a>
     <a class="sbtn ghost" href="${L.outlook}" target="_blank" rel="noopener">✉️ Outlook</a>
     <a class="sbtn ghost" href="${L.yahoo}" target="_blank" rel="noopener">✉️ Yahoo</a>
@@ -3028,8 +3040,20 @@ document.addEventListener('click',e=>{
     <a class="sbtn ghost" href="${L.tg}" target="_blank" rel="noopener">✈️ Telegram</a>
     <a class="sbtn ghost" href="${L.mailto}">📧 Mail app</a>
     <a class="sbtn ghost" href="${L.sms}">📱 SMS</a>
-    <span class="small mutedt">If an app doesn't open, use Copy and paste it in.</span>`;
+    ${social}
+    <span class="small mutedt mhint">If an app doesn't open, use Copy and paste it in.</span>`;
+  const ta=menu.querySelector('.mtext'), cb=menu.querySelector('.mcopy'), full=body+footer; ta.value=full;
+  cb.addEventListener('click',()=>{ const ok=()=>{ cb.textContent='✅ Copied'; setTimeout(()=>{cb.textContent='📋 Copy message';},2500); };
+    const fb=()=>{ ta.focus(); ta.select(); try{ document.execCommand('copy'); ok(); }catch(x){ cb.textContent='Press and hold the text, then tap Copy'; } };
+    try{ navigator.clipboard.writeText(full).then(ok,fb); }catch(x){ fb(); } });
 });
+/* Full-screen QR: just the code on a white screen, nothing over it */
+function showQR(url,label){ if(!window.fifoQRsvg) return; const v=document.createElement('div'); v.className='qrfull'; v.setAttribute('role','dialog'); v.setAttribute('aria-label',label||'QR code');
+  v.innerHTML='<div class="qrhint">Tap anywhere to close</div><div class="qrbig">'+window.fifoQRsvg(url,4)+'</div>'; let wl=null;
+  const close=()=>{ v.remove(); document.removeEventListener('keydown',esc); try{ if(wl) wl.release(); }catch(x){} };
+  const esc=ev=>{ if(ev.key==='Escape') close(); }; v.addEventListener('click',close); document.addEventListener('keydown',esc); document.body.appendChild(v);
+  try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(l=>{ wl=l; },()=>{}); }catch(x){} }
+document.addEventListener('click',e=>{ if(e.target.closest('#qrQuokka')) showQR('https://fifojobkit.com/quokka/','Quokka poster QR code'); });
 const AI={claude:'Claude',chatgpt:'ChatGPT',gemini:'Gemini',copilot:'Copilot'};
 document.addEventListener('click',e=>{
   const a=e.target.closest('.aibtn'); if(!a) return;

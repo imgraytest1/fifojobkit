@@ -32,6 +32,21 @@
 #srcCard .r{display:flex;gap:8px;margin-top:6px}#srcCard .r button{flex:1;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:700 17px system-ui,Arial;cursor:pointer}
 #srcCard .r .go{background:var(--hivis);color:var(--hivis-ink);border-color:var(--hivis)}
 </style>
+<style id="gap-css">
+.gapopt{display:flex;gap:12px;align-items:center;width:100%;box-sizing:border-box;text-align:left;padding:16px;margin:8px 0;border:2px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
+.gapopt .e{font-size:30px}.gapopt b{display:block;font-size:19px}.gapopt span.d{font-size:14px;color:var(--muted)}
+.gapopt[aria-pressed="true"]{border-color:var(--hivis);background:var(--chip)}
+#gapForm label{display:block;font-weight:700;margin:12px 0 4px;font-size:15px}
+#gapForm input,#gapForm select{width:100%;box-sizing:border-box;font-size:18px;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+#gapForm .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}#gapForm input[type=date]{min-width:0;font-size:16px;padding:12px 6px}
+#gapMsg{width:100%;box-sizing:border-box;min-height:190px;font:16px/1.4 system-ui,Arial;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.gapsend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.gapsend a,.gapsend button{padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:700 17px system-ui,Arial;text-align:center;text-decoration:none;cursor:pointer}
+.gapsend .go{background:var(--hivis);color:var(--hivis-ink);border-color:var(--hivis)}
+.gaplinks a{display:block;padding:14px;margin:8px 0;border-radius:12px;border:2px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700}
+.gaplinks a small{display:block;font-weight:400;color:var(--muted)}
+</style>
+<style id="cmp-css">#offers.quick .x{display:none}.qmrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}.qmrow .sbtn{flex:none}.offer details.x summary{font-weight:700;margin:8px 0;cursor:pointer}</style>
 </head><body>
 <title>FIFO Job Kit</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -496,7 +511,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
       <div id="tipsForm" hidden><div class="ml-embedded" data-form="rlKN4S"></div><p class="small" style="margin-top:8px">We will email you to confirm. Check your inbox (and spam) and tap the link.</p></div>
     </section>
     <div class="growbar" id="growHome" hidden></div>
-    <section class="tgroup g-find"><h3 class="ghead" id="gh-find"><span class="gic" aria-hidden="true">🔎</span><span class="gt">Find work</span><small>Search, apply, track</small></h3><nav class="tiles" aria-label="Find work"><a class="tile main" href="#find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><b>Find jobs</b><span>Claude finds jobs for you and writes your resume.</span></a><a class="tile" href="#where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg><b>Where to look</b><span>Job sites, agencies and companies.</span></a><a class="tile" href="#alerts"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Daily job emails</b><span>New jobs sent to your email every day.</span></a><a class="tile wide" href="#tracker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17"/></svg><b>My applications</b><span>Track jobs you applied for.</span></a></nav></section>
+    <section class="tgroup g-find"><h3 class="ghead" id="gh-find"><span class="gic" aria-hidden="true">🔎</span><span class="gt">Find work</span><small>Search, apply, track</small></h3><nav class="tiles" aria-label="Find work"><a class="tile main" href="#find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><b>Find jobs</b><span>Claude finds jobs for you and writes your resume.</span></a><a class="tile" href="#where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg><b>Where to look</b><span>Job sites, agencies and companies.</span></a><a class="tile" href="#alerts"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Daily job emails</b><span>New jobs sent to your email every day.</span></a><a class="tile" href="#pay" id="tileCmp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></svg><b>Compare jobs</b><span>Put 2 or 3 offers side by side. See which pays more.</span></a><a class="tile wide" href="#gap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h5M15 12h5M9 8l-2 4 2 4M15 8l2 4-2 4"/></svg><b>Fill my gap</b><span>Short jobs, shutdowns and days off between swings.</span></a><a class="tile wide" href="#tracker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17"/></svg><b>My applications</b><span>Track jobs you applied for.</span></a></nav></section>
 <section class="tgroup g-ready"><h3 class="ghead" id="gh-ready"><span class="gic" aria-hidden="true">🎒</span><span class="gt">Get ready</span><small>Before you start</small></h3><nav class="tiles" aria-label="Get ready"><a class="tile" href="#newcomer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><b>New arrival checklist</b><span>Get set up before you apply.</span></a><a class="tile" href="#training"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h10M7 12h6"/></svg><b>Tickets & training money</b><span>Tickets, expiry reminders and course refund claims.</span></a><a class="tile" href="#medical"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg><b>Medical test prep</b><span>What to expect at your pre-start medical.</span></a><a class="tile" href="#resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><b>Resume check</b><span>Free checklist for your resume.</span></a><a class="tile" href="#interview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><b>Interview practice</b><span>Common questions and tips.</span></a><a class="tile" href="#scam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="M12 8v5M12 16.5v.5"/></svg><b>Scam check</b><span>Is this job offer real?</span></a><a class="tile" href="#rights"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg><b>Rights at work</b><span>Pay, super, safety, visa rights and free help.</span></a></nav></section>
 <section class="tgroup g-money"><h3 class="ghead" id="gh-money"><span class="gic" aria-hidden="true">💰</span><span class="gt">Money</span><small>Pay, tax, super, goals</small></h3><nav class="tiles" aria-label="Money"><a class="tile" href="#pay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c0-1.7-2-3-4.5-3s-4.5 1.3-4.5 3 2 2.6 4.5 3 4.5 1.3 4.5 3.2-2 3-4.5 3-4.5-1.3-4.5-3"/></svg><b>Pay & payslips</b><span>Take-home pay, payslip check, compare offers.</span></a><a class="tile" href="#super"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16v-4M10 16V8M14 16v-6M18 16V5"/></svg><b>Super</b><span>Best performing funds and what yours could grow to.</span></a><a class="tile" href="#whm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><b>Working holiday year</b><span>Plan your year: pay, tax, super back when you leave.</span></a><a class="tile" href="#goals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg><b>Swing goals</b><span>How many swings to your trip, ute or house.</span></a></nav></section>
 <section class="tgroup g-swing"><h3 class="ghead" id="gh-swing"><span class="gic" aria-hidden="true">✈️</span><span class="gt">Swings & dates</span><small>Rosters, flights, wellbeing</small></h3><nav class="tiles" aria-label="Swings & dates"><a class="tile" href="#swings"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Swing planner</b><span>Swing dates, flights and days-off trips.</span></a><a class="tile" href="#calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M12 14h2M16 14h2M8 17h2"/></svg><b>My dates</b><span>Every date in one list, to your calendar.</span></a><a class="tile wide" href="#wellbeing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg><b>Wellbeing</b><span>Free help lines, sleep, family and looking out for mates.</span></a></nav></section>
@@ -504,6 +519,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
 
     <div class="fbbar" id="fbBar" hidden><div><b>💬 How can we make this kit better?</b><span class="small mutedt">2 minutes. It helps the next person.</span></div><a class="btn ghost fblink" target="_blank" rel="noopener">Give feedback</a><button type="button" class="btn ghost" data-kitmail="feedback" hidden>💬 Give feedback</button></div>
     <div class="matebar"><div><b>🤝 Know someone looking for FIFO work?</b><span class="small mutedt">Send them the kit. It's free.</span></div><button type="button" class="btn primary" data-email="mate">Share with a mate</button></div>
+    <div class="matebar" id="mlTipsBar"><div><b>📧 Get free FIFO tips</b><span class="small mutedt">One short email a week. Optional. Unsubscribe any time. Opens a sign-up page.</span></div><a class="btn primary" href="https://preview.mailerlite.io/forms/2763294/203902074990101902/share" target="_blank" rel="noopener" id="mlTipsBtn" style="text-decoration:none;text-align:center">Get tips</a></div>
   </div>
 
   <!-- FIND JOBS -->
@@ -642,6 +658,41 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <p class="lastchk" data-chk="training"></p>
     <p class="warn">Only buy the tickets the job asks for. One new FIFO worker paid $3,600 for 6 tickets; a recruiter said 3 of them, about $1,414, were all that job needed. Ask the employer or agency first, and many sites train you on their own machines.</p>
     <p class="small mutedt" style="margin-top:12px">Training courses in Australia need a USI (Unique Student Identifier). It's free: <a href="https://www.usi.gov.au/" target="_blank" rel="noopener" style="color:var(--hivis)">usi.gov.au</a>.</p>
+  </div>
+
+  <div class="view" id="v-gap" hidden>
+  <section class="paysec" id="gap" aria-labelledby="gaph">
+    <span class="eyebrow">⏱️ 3 min · short jobs and shutdowns</span>
+    <h2 class="big2" id="gaph">🧩 Fill my gap</h2>
+    <p class="lede">Got days off, a finished contract or a shutdown coming? Tell recruiters you are free. Three taps, then send.</p>
+
+    <h3>1️⃣ What are you after?</h3>
+    <div id="gapKind">
+      <button type="button" class="gapopt" data-k="short" aria-pressed="false"><span class="e">🔧</span><span><b>A few weeks of work</b><span class="d">Short contract, 2 to 12 weeks.</span></span></button>
+      <button type="button" class="gapopt" data-k="shut" aria-pressed="false"><span class="e">🛠️</span><span><b>A shutdown</b><span class="d">Big crew, 1 to 6 weeks. Fills fast.</span></span></button>
+      <button type="button" class="gapopt" data-k="days" aria-pressed="false"><span class="e">🔁</span><span><b>Fill my days off</b><span class="d">Casual or extra swing between rosters.</span></span></button>
+    </div>
+
+    <h3>2️⃣ When are you free?</h3>
+    <div id="gapForm">
+      <label for="gapName">Your first name</label><input id="gapName" autocomplete="given-name">
+      <label for="gapTrade">Your trade</label><input id="gapTrade" placeholder="e.g. Electrician">
+      <div class="two"><div><label for="gapFrom">Free from</label><input id="gapFrom" type="date"></div><div><label for="gapTo">Free until</label><input id="gapTo" type="date"></div></div>
+      <label for="gapWhere">Where</label><select id="gapWhere"><option>anywhere in WA</option><option>Perth</option><option>the Pilbara</option><option>the Goldfields</option><option>the Mid West</option><option>the South West</option></select>
+      <label for="gapTix">Tickets you hold (no numbers)</label><input id="gapTix" placeholder="e.g. White card, working at heights">
+      <p class="small mutedt">🔒 Stays on your phone. Never put licence, tax file or bank numbers in a message.</p>
+    </div>
+
+    <h3>3️⃣ Your message</h3>
+    <textarea id="gapMsg" aria-label="Your message to recruiters"></textarea>
+    <div class="gapsend"><button type="button" class="go" id="gapCopy">📋 Copy</button><a id="gapWa" target="_blank" rel="noopener">💬 WhatsApp</a><a id="gapMail">✉️ Email</a><a id="gapSms">📱 Text</a></div>
+
+    <h3>4️⃣ Who to send it to</h3>
+    <p class="small mutedt">Shutdown crews are usually picked from agency lists first. Message several agencies, then check the job sites each morning.</p>
+    <div class="gaplinks" id="gapLinks"></div>
+
+    <div class="warn" style="margin-top:16px"><b>⚠️ Never pay for a job.</b> Real agencies and employers do not charge you to be put forward. Do not send tax file, licence or bank numbers in a first message. Check the company's ABN at <a href="https://abr.business.gov.au/" target="_blank" rel="noopener" style="color:var(--hivis)">abr.business.gov.au</a> and be careful with offers from social media.</div>
+  </section>
   </div>
 
   <div class="view" id="v-where" hidden>
@@ -784,13 +835,14 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
       <div class="panel">
         <h3>Your offers</h3>
         <p class="small mutedt">Up to four offers. Paste an ad into an offer and tap Read, or type the numbers. Ranked by take-home per week.</p>
-        <div class="offers" id="offers"></div>
+        <div class="qmrow"><button type="button" id="qmToggle" class="sbtn">⚡ Quick mode: ON</button><span class="small mutedt" id="qmNote">5 boxes per job. Assumes 12-hour shifts and super on top.</span></div>
+        <div class="offers quick" id="offers"></div>
         <div class="row"><button type="button" id="addOffer" class="sbtn ghost">Add offer</button></div>
       </div>
       <div class="panel" aria-live="polite">
         <h3>Side by side</h3>
         <div class="tbl"><table id="cmpTable">
-          <thead><tr><th>Offer</th><th class="num">Take-home / wk</th><th class="num">Per swing</th><th class="num">Per year</th><th class="num">Super / yr</th><th class="num">Days home / yr</th><th class="num">Take-home / site day</th></tr></thead>
+          <thead><tr><th>Offer</th><th class="num">Take-home / wk</th><th class="num">Per swing</th><th class="num">Per year</th><th class="num">Benefits / yr</th><th class="num">Package / yr</th><th class="num">Super / yr</th><th class="num">Days home / yr</th><th class="num">Take-home / site day</th></tr></thead>
           <tbody></tbody>
         </table></div>
         <p class="small mutedt" id="cmpNote"></p>
@@ -1960,12 +2012,15 @@ $('slipFile').addEventListener('change',async e=>{
 
 /* ---------- compare offers ---------- */
 let offers=[], seq=0;
+const CORE=['name','rate','allow','on','off'];
+const OFB=[['fly','Flights you would pay, $ per swing','number'],['camp','Food + room paid, $ per site day','number'],['bonus','Sign-on / completion bonus $','number'],['leave','Extra paid leave days a year','number'],['costs','Your up-front costs $ (tickets, boots)','number']];
 const OF=[['name','Offer name','text'],['rate','Rate $/hr','number'],['ord','Hrs/shift','number'],['ot15','OT hrs 1.5×','number'],['allow','Allowance $/shift','number'],['on','Days on','number'],['off','Days off','number'],['salary','or Salary $/yr','number']];
-function addOffer(o){ if(offers.length>=4){ $('cmpNote').textContent='Four offers is the limit. Remove one to add another.'; return; } offers.push(Object.assign({id:++seq,name:'Offer '+(offers.length+1),rate:'',ord:12,ot15:0,ot2:0,allow:0,on:14,off:7,salary:'',sup:'plus',ad:''},o||{})); drawOffers(); renderCmp(); }
+function addOffer(o){ if(offers.length>=4){ $('cmpNote').textContent='Four offers is the limit. Remove one to add another.'; return; } offers.push(Object.assign({id:++seq,name:'Offer '+(offers.length+1),rate:'',ord:12,ot15:0,ot2:0,allow:0,on:14,off:7,salary:'',sup:'plus',ad:'',fly:'',camp:'',bonus:'',leave:'',costs:''},o||{})); drawOffers(); renderCmp(); }
 function drawOffers(){
   $('offers').innerHTML=offers.map(o=>`<div class="offer" data-id="${o.id}">
-    <div class="cgrid">${OF.map(([k,l,t])=>`<label class="f">${l}<input data-k="${k}" type="${t}" ${t==='number'?'inputmode="decimal" min="0" step="any"':''} value="${String(o[k]??'').replace(/"/g,'&quot;')}"></label>`).join('')}
-      <label class="f">Super<select data-k="sup"><option value="plus"${o.sup==='plus'?' selected':''}>+ super</option><option value="inc"${o.sup==='inc'?' selected':''}>incl. super</option></select></label></div>
+    <div class="cgrid">${OF.map(([k,l,t])=>`<label class="f${CORE.includes(k)?'':' x'}">${l}<input data-k="${k}" type="${t}" ${t==='number'?'inputmode="decimal" min="0" step="any"':''} value="${String(o[k]??'').replace(/"/g,'&quot;')}"></label>`).join('')}
+      <label class="f x">Super<select data-k="sup"><option value="plus"${o.sup==='plus'?' selected':''}>+ super</option><option value="inc"${o.sup==='inc'?' selected':''}>incl. super</option></select></label></div>
+    <details class="x"><summary>🎁 Benefits worth money</summary><div class="cgrid">${OFB.map(([k,l,t])=>`<label class="f">${l}<input data-k="${k}" type="number" inputmode="decimal" min="0" step="any" value="${String(o[k]??'').replace(/"/g,'&quot;')}"></label>`).join('')}</div></details>
     <details><summary>Paste this offer's ad</summary><textarea data-k="ad" placeholder="Paste the ad, then Read">${(o.ad||'').replace(/</g,'&lt;')}</textarea><button type="button" class="sbtn ghost" data-act="read">Read</button></details>
     <button type="button" class="sbtn ghost rm" data-act="rm">Remove</button></div>`).join('');
 }
@@ -1974,19 +2029,25 @@ $('offers').addEventListener('click',e=>{ const act=e.target.dataset.act; if(!ac
   if(act==='rm'){ offers=offers.filter(x=>x!==o); drawOffers(); renderCmp(); }
   if(act==='read'){ const {out}=parseAd(o.ad||''); ['rate','salary','on','off','allow'].forEach(k=>{ if(out[k]!=null) o[k]=out[k]; }); if(out.shift) o.ord=out.shift; if(out.sup) o.sup=out.sup; drawOffers(); renderCmp(); } });
 $('addOffer').addEventListener('click',()=>addOffer());
+$('qmToggle').addEventListener('click',()=>{ const q=$('offers').classList.toggle('quick'); $('qmToggle').textContent='⚡ Quick mode: '+(q?'ON':'OFF'); $('qmNote').textContent=q?'5 boxes per job. Assumes 12-hour shifts and super on top.':'Full details: overtime, salary, super and benefits.'; });
+$('tileCmp').addEventListener('click',()=>{ setTimeout(()=>{ const t=$('tab-cmp'); if(t) t.click(); },60); });
 let cmpRows=[];
 function renderCmp(){
   const st=curSt();
-  cmpRows=offers.map(o=>{ const v=k=>{const x=parseFloat(o[k]); return isFinite(x)?x:0;}; const f=offerFigures({rate:v('rate'),ord:v('ord'),ot15:v('ot15'),allow:v('allow'),on:v('on'),off:v('off'),salary:v('salary'),sup:o.sup},st); return {name:o.name||'Offer',f}; })
-    .sort((a,b)=>b.f.c.net-a.f.c.net);
-  const best=cmpRows[0];
-  $('cmpTable').tBodies[0].innerHTML = cmpRows.length ? cmpRows.map((r,i)=>`<tr class="${i===0&&cmpRows.length>1?'hl total':''}"><td>${r.name.replace(/</g,'&lt;')}${i===0&&cmpRows.length>1?' <span class="tag">Best pay</span>':''}</td><td class="num">${fmt(r.f.c.net*7/365)}</td><td class="num">${fmt(r.f.c.net*r.f.cyc)}</td><td class="num">${fmt(r.f.c.net)}</td><td class="num">${fmt(r.f.sup)}</td><td class="num">${Math.round(r.f.home)}</td><td class="num">${fmt(r.f.perSiteDay)}</td></tr>`).join('')
-    : '<tr><td colspan="7" class="mutedt">Add an offer to start.</td></tr>';
-  if(cmpRows.length>1){ const mostHome=[...cmpRows].sort((a,b)=>b.f.home-a.f.home)[0], gap=best.f.c.net-cmpRows[1].f.c.net;
-    $('cmpNote').textContent=`${best.name} pays ${fmt(gap)} a year more take-home than ${cmpRows[1].name}.`+(mostHome!==best?` ${mostHome.name} gives the most days at home (${Math.round(mostHome.f.home)} a year).`:'')+` Taxed as ${LABEL[st]}.`; }
+  cmpRows=offers.map(o=>{ const v=k=>{const x=parseFloat(o[k]); return isFinite(x)?x:0;}; const f=offerFigures({rate:v('rate'),ord:v('ord'),ot15:v('ot15'),allow:v('allow'),on:v('on'),off:v('off'),salary:v('salary'),sup:o.sup},st);
+      const siteDays=365-f.home, swings=f.cyc?1/f.cyc:0, ben=v('fly')*swings+v('camp')*siteDays+v('bonus')+v('leave')*f.perSiteDay-v('costs'); const total=f.c.net+ben; return {name:o.name||'Offer',f,ben,total}; })
+    .sort((a,b)=>b.total-a.total);
+  const best=cmpRows[0], anyBen=cmpRows.some(r=>r.ben!==0);
+  $('cmpTable').tBodies[0].innerHTML = cmpRows.length ? cmpRows.map((r,i)=>`<tr class="${i===0&&cmpRows.length>1?'hl total':''}"><td>${r.name.replace(/</g,'&lt;')}${i===0&&cmpRows.length>1?' <span class="tag">'+(anyBen?'Best overall':'Best pay')+'</span>':''}</td><td class="num">${fmt(r.f.c.net*7/365)}</td><td class="num">${fmt(r.f.c.net*r.f.cyc)}</td><td class="num">${fmt(r.f.c.net)}</td><td class="num">${fmt(r.ben)}</td><td class="num">${fmt(r.total)}</td><td class="num">${fmt(r.f.sup)}</td><td class="num">${Math.round(r.f.home)}</td><td class="num">${fmt(r.f.perSiteDay)}</td></tr>`).join('')
+    : '<tr><td colspan="9" class="mutedt">Add an offer to start.</td></tr>';
+  if(cmpRows.length>1){ const sec=cmpRows[1], mostHome=[...cmpRows].sort((a,b)=>b.f.home-a.f.home)[0], wk=(best.total-sec.total)/52, dh=Math.round(best.f.home-sec.f.home);
+    let t=`${best.name} puts about ${fmt(wk)} a week more in your pocket than ${sec.name}`+(anyBen?' (benefits included)':'');
+    if(dh>0) t+=` and gives you ${dh} more days home a year.`; else if(dh<0) t+=`, but you are home ${-dh} fewer days a year.`; else t+='.';
+    if(mostHome!==best&&mostHome.f.home>best.f.home) t+=` ${mostHome.name} gives the most days at home (${Math.round(mostHome.f.home)} a year).`;
+    $('cmpNote').textContent=t+` Taxed as ${LABEL[st]}.`; }
   else $('cmpNote').textContent= cmpRows.length? 'Add a second offer to compare.' : '';
 }
-$('cmpCopy').addEventListener('click',()=>{ if(!cmpRows.length) return; copyText(['Offer comparison 2026–27 ('+LABEL[curSt()]+')',...cmpRows.map((r,i)=>`${i+1}. ${r.name}: ${fmt(r.f.c.net*7/365)}/wk take-home, ${fmt(r.f.c.net*r.f.cyc)} per ${r.f.on}/${r.f.off} swing, ${fmt(r.f.c.net)}/yr, ${Math.round(r.f.home)} days home`),'FIFO Job Kit by Awesome Alchemy. General information only, not tax advice.'].join('\n'),'cmpToast','cmpFallback'); });
+$('cmpCopy').addEventListener('click',()=>{ if(!cmpRows.length) return; copyText(['Offer comparison 2026–27 ('+LABEL[curSt()]+')',...cmpRows.map((r,i)=>`${i+1}. ${r.name}: ${fmt(r.f.c.net*7/365)}/wk take-home, ${fmt(r.f.c.net*r.f.cyc)} per ${r.f.on}/${r.f.off} swing, ${fmt(r.f.c.net)}/yr, ${r.ben?fmt(r.ben)+' benefits, ':''}${fmt(r.total)} package/yr, ${Math.round(r.f.home)} days home`),'FIFO Job Kit by Awesome Alchemy. General information only, not tax advice.'].join('\n'),'cmpToast','cmpFallback'); });
 
 /* ---------- init ---------- */
 function renderAll(){ renderAd(); renderSlip(); renderCmp(); }
@@ -2089,7 +2150,7 @@ const addDays=(s,n)=>{const d=new Date(s+'T00:00:00');d.setDate(d.getDate()+n);d
 function copyText(txt,toast,fb){const done=()=>{$(toast).textContent='Copied';setTimeout(()=>$(toast).textContent='',2500)};const f=()=>{const e=$(fb);e.hidden=false;e.value=txt;e.select();$(toast).textContent='Select all and copy the text below'};try{navigator.clipboard.writeText(txt).then(done,f)}catch(e){f()}}
 
 /* ---------- routing ---------- */
-const VIEWS=['home','tjobs','tmoney','tgoals','twell','find','where','alerts','tracker','pay','super','whm','training','newcomer','words','resume','scam','share','interview','swings','data','goals','stories','value','calendar','rights','wellbeing','medical','skin','breath','hydrate'];
+const VIEWS=['home','tjobs','gap','tmoney','tgoals','twell','find','where','alerts','tracker','pay','super','whm','training','newcomer','words','resume','scam','share','interview','swings','data','goals','stories','value','calendar','rights','wellbeing','medical','skin','breath','hydrate'];
 function route(){
   let h=(location.hash||'').replace('#','');
   if(VIEWS.indexOf(h)<0) h='home';
@@ -3765,7 +3826,7 @@ function tease(){ var d=window.FIFO_MH; if(!d||!$('teaseNet')) return; var mf={}
   $('teaseSub').textContent=d.goal?((mf.done||0)+' of '+d.n+' swings to your goal'+(mf.for?' ('+mf.for+')':'')):'Tap to see what a swing pays you'; }
 
 /* ---- tab highlight ---- */
-var MAP={find:'tjobs',where:'tjobs',alerts:'tjobs',tracker:'tjobs',training:'tjobs',newcomer:'tjobs',resume:'tjobs',interview:'tjobs',scam:'tjobs',rights:'tjobs',medical:'tjobs',skin:'twell',breath:'twell',hydrate:'twell',
+var MAP={gap:'tjobs',find:'tjobs',where:'tjobs',alerts:'tjobs',tracker:'tjobs',training:'tjobs',newcomer:'tjobs',resume:'tjobs',interview:'tjobs',scam:'tjobs',rights:'tjobs',medical:'tjobs',skin:'twell',breath:'twell',hydrate:'twell',
  pay:'tmoney',super:'tmoney',whm:'tmoney',goals:'tgoals',swings:'tgoals',calendar:'tgoals',wellbeing:'twell',words:'twell',stories:'twell',share:'twell',value:'twell',data:'twell'};
 function hi(){ var h=(location.hash||'#home').slice(1)||'home', t=MAP[h]||h; Array.prototype.forEach.call(document.querySelectorAll('.tabbar a'),function(a){ var on=a.dataset.t===t; a.classList.toggle('on',on); if(on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); }); tease(); setTimeout(trDyn,0); }
 window.addEventListener('hashchange',hi);
@@ -3981,6 +4042,41 @@ setTimeout(render,150);
 })();
 </script>
 
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)}; if(!$('gapMsg'))return;
+var KEY='fifokit_gap', st={k:'short'};
+try{st=Object.assign(st,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
+var F=['gapName','gapTrade','gapFrom','gapTo','gapWhere','gapTix'];
+F.forEach(function(i){if(st[i]!=null&&st[i]!=='')$(i).value=st[i]});
+if(!$('gapTrade').value){var t=document.getElementById('trade');if(t&&t.value&&t.selectedIndex>0)$('gapTrade').value=t.options[t.selectedIndex].text}
+function fd(v){if(!v)return '';var p=v.split('-');return p[2]+'/'+p[1]+'/'+p[0]}
+var KIND={short:'a short contract',shut:'shutdown work',days:'casual or extra shifts between my rosters'};
+function build(){
+  var n=$('gapName').value.trim()||'[your name]', tr=$('gapTrade').value.trim()||'tradie', w=$('gapWhere').value,
+      f=fd($('gapFrom').value), to=fd($('gapTo').value), tix=$('gapTix').value.trim();
+  var when=f&&to?'from '+f+' to '+to:f?'from '+f:to?'until '+to:'at short notice';
+  var m='Hi, I\'m '+n+', a '+tr+' looking for '+KIND[st.k]+' '+when+', '+(w==='anywhere in WA'?'anywhere in WA':'in '+w)+'. '+(tix?'Tickets: '+tix+'. ':'')+'I can start at short notice and can send my resume straight away. Please let me know if you have anything suitable. Thanks, '+n;
+  $('gapMsg').value=m; sendLinks(); links();
+}
+function sendLinks(){var t=encodeURIComponent($('gapMsg').value);
+  $('gapWa').href='https://wa.me/?text='+t;$('gapSms').href='sms:?&body='+t;
+  $('gapMail').href='mailto:?subject='+encodeURIComponent('Available for '+KIND[st.k])+'&body='+t}
+function links(){var q=encodeURIComponent((st.k==='shut'?'shutdown ':'')+($('gapTrade').value||'electrician')),qp=($('gapTrade').value||'electrician').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
+  var shut=st.k==='shut';
+  $('gapLinks').innerHTML=
+   '<a href="https://www.google.com/search?q='+encodeURIComponent((shut?'shutdown ':'short term ')+($('gapTrade').value||'electrician')+' labour hire WA register')+'" target="_blank" rel="noopener">🏢 Labour hire and agencies<small>Find agencies to send your message to.</small></a>'+
+   '<a href="https://www.seek.com.au/'+(shut?'shutdown-':'')+qp+'-jobs/in-Western-Australia" target="_blank" rel="noopener">🔎 Seek: '+(shut?'shutdown ':'')+'jobs in WA<small>Tap Save search and turn on email alerts.</small></a>'+
+   '<a href="https://au.indeed.com/jobs?q='+q+'&l=Western+Australia&fromage=7" target="_blank" rel="noopener">🔎 Indeed: new this week<small>Set a daily email alert.</small></a>'}
+function mark(){document.querySelectorAll('#gapKind .gapopt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===st.k?'true':'false')})}
+function save(){F.forEach(function(i){st[i]=$(i).value});try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+document.querySelectorAll('#gapKind .gapopt').forEach(function(b){b.addEventListener('click',function(){st.k=b.dataset.k;mark();save();build()})});
+F.forEach(function(i){$(i).addEventListener('input',function(){save();build()})});
+$('gapMsg').addEventListener('input',sendLinks);
+$('gapCopy').addEventListener('click',function(){try{navigator.clipboard.writeText($('gapMsg').value).then(function(){$('gapCopy').textContent='✅ Copied'})}catch(e){$('gapMsg').select()}});
+mark();build();
+})();
+</script>
 <script>if("serviceWorker" in navigator&&location.protocol==="https:"){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39ea7f295530451e9b3709dc6e0b5108"}'></script><!-- End Cloudflare Web Analytics -->
 <script>

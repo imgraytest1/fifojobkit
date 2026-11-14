@@ -4412,4 +4412,21 @@ applyT();pkRender();onHash();window.fifoDrRender&&window.fifoDrRender();
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 })();
 </script>
+<script>
+(function(){try{
+var LIM=4;
+document.querySelectorAll('.tgroup').forEach(function(g){
+  var nav=g.querySelector('nav.tiles'); if(!nav)return;
+  var t=nav.querySelectorAll('a.tile'); if(t.length<=LIM+1)return;
+  var hid=[].slice.call(t,LIM); hid.forEach(function(x){x.hidden=true});
+  var b=document.createElement('button'); b.type='button'; b.className='sbtn ghost seeMore';
+  b.style.cssText='margin-top:8px;align-self:flex-start';
+  b.setAttribute('aria-expanded','false');
+  function lab(o){b.textContent=o?'Show fewer':'See '+hid.length+' more'}
+  lab(false);
+  b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';hid.forEach(function(x){x.hidden=!o});b.setAttribute('aria-expanded',o?'true':'false');lab(o)});
+  nav.insertAdjacentElement('afterend',b);
+});
+}catch(e){}})();
+</script>
 </body></html>

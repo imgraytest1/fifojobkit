@@ -499,6 +499,13 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
       <div class="drcare" id="drCare" hidden>💛 Having a rough time? You don't have to push through alone. Talk to someone now: <a href="tel:131114">Lifeline 13 11 14</a> (24/7), or <a href="#wellbeing">see more free help →</a></div>
     </section>
 
+    <section class="panel stages" aria-labelledby="stH">
+      <h2 id="stH" style="margin:0 0 4px;font-size:18px">👋 Where are you now?</h2>
+      <p class="small" style="margin:0 0 8px">Pick one and we will show you what to do next.</p>
+      <a class="sauLink" href="#tjobs"><b>🔍 Getting a job</b><span>Find work, resume, tickets, scams</span></a>
+      <a class="sauLink" href="#tmoney"><b>⛏️ On a swing</b><span>Pay, super, packing, saving money</span></a>
+      <a class="sauLink" href="#sauna"><b>🌴 Swing off</b><span>Sauna, massage, yoga, golf, trips</span></a>
+    </section>
     <div class="today" id="today" hidden></div>
     <div class="growbar expalert" id="expAlert" hidden></div>
     <div class="growbar expalert" id="clAlert" hidden></div>
@@ -4427,6 +4434,14 @@ document.querySelectorAll('.tgroup').forEach(function(g){
   b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';hid.forEach(function(x){x.hidden=!o});b.setAttribute('aria-expanded',o?'true':'false');lab(o)});
   nav.insertAdjacentElement('afterend',b);
 });
+}catch(e){}})();
+</script>
+<script>
+(function(){try{
+var N={find:['resume','Build your resume'],resume:['interview','Practise your interview'],interview:['tracker','Track your applications'],tracker:['swings','Plan your swings'],swings:['pack','Open the packing list'],pack:['sauna','Plan your swing off'],sauna:['wellbeing','Look after yourself'],wellbeing:['goals','Set a savings goal'],goals:['pay','Check your pay'],pay:['super','Check your super'],super:['goals','Set a savings goal'],newcomer:['find','Find work'],whm:['newcomer','New to Australia?'],training:['find','Find work'],scam:['find','Find work'],rights:['pay','Check your pay'],calendar:['swings','Plan your swings'],files:['resume','Build your resume'],hydrate:['wellbeing','Wellbeing'],breath:['wellbeing','Wellbeing'],skin:['wellbeing','Wellbeing'],medical:['wellbeing','Wellbeing']};
+Object.keys(N).forEach(function(k){var v=document.getElementById('v-'+k);if(!v)return;
+ var a=document.createElement('a');a.className='btn primary nextBtn';a.href='#'+N[k][0];a.textContent='Next: '+N[k][1]+' →';
+ a.style.cssText='display:block;text-align:center;text-decoration:none;margin:16px 0';v.appendChild(a);});
 }catch(e){}})();
 </script>
 </body></html>

@@ -23,7 +23,7 @@
 #srcCard select{width:100%;box-sizing:border-box;font-size:18px;padding:12px;margin:0 0 8px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
 #srcCard .r{display:flex;gap:8px;margin-top:6px}#srcCard .r button{flex:1;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:700 17px system-ui,Arial;cursor:pointer}
 #srcCard .r .go{background:var(--hivis);color:var(--hivis-ink);border-color:var(--hivis)}
-</style>
+.sauLink{display:flex;flex-direction:column;gap:2px;padding:12px 14px;margin:6px 0;border:1px solid var(--line,#8886);border-radius:12px;text-decoration:none;color:inherit;min-height:44px}.sauLink span{font-size:.85em;opacity:.75}.sauList{margin:6px 0 0;padding-left:18px;display:grid;gap:8px}.sauNote{font-size:.85em;opacity:.8;margin:0 0 6px}</style>
 <style id="gap-css">
 .gapopt{display:flex;gap:12px;align-items:center;width:100%;box-sizing:border-box;text-align:left;padding:16px;margin:8px 0;border:2px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
 .gapopt .e{font-size:30px}.gapopt b{display:block;font-size:19px}.gapopt span.d{font-size:14px;color:var(--muted)}
@@ -328,6 +328,7 @@ details.ivq p,.ivfocus p{margin:6px 0 0;color:var(--muted)}
 .vhead{padding-block:22px 4px}
 .progress{display:flex;align-items:center;gap:12px;margin-top:14px}
 .pbar{flex:1;height:8px;background:var(--chip);border-radius:99px;overflow:hidden;min-width:60px}
+.drit.pulse{outline:3px solid var(--hivis-soft);outline-offset:2px;border-radius:8px}
 .pbar i{display:block;height:100%;width:0;background:var(--hivis);transition:width .25s}
 #plabel{font-family:var(--f-mono);font-size:13px;color:var(--muted);white-space:nowrap}
 .wiz{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
@@ -487,11 +488,13 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
       <h2 id="drH" class="drh">🌿 Daily Reset</h2>
       <p class="drp">Small habits that keep you strong, happy and earning on swing. Tick what you did today.</p>
       <div class="drlv" id="drLv"></div>
+      <div class="drprog"><div class="pbar" style="flex:none;width:100%;margin:8px 0"><i id="drBar" style="width:0"></i></div><div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><button type="button" id="drNext" style="background:none;border:0;color:inherit;font:inherit;font-size:15px;text-align:left;text-decoration:underline;min-height:44px;padding:0;cursor:pointer"></button><span class="small" id="drSaved" role="status" aria-live="polite"></span></div></div>
       <div id="drList"></div>
       <div class="drup" id="drUp" hidden></div>
       <button type="button" class="drb" id="drBreath">🫁 1-minute calm breathing</button>
       <div class="drbr" id="drBr" hidden><div class="drcircle" id="drCircle"></div><p id="drBrTxt">Breathe in</p><button type="button" class="drb" id="drBrStop" style="background:rgba(255,255,255,.14);color:#fff">Stop</button></div>
       <label class="drgl">🙏 One thing I'm grateful for today<input type="text" id="drGrat" maxlength="80" placeholder="e.g. sunset over the pit"></label>
+      <button type="button" class="drb" id="drGratSave" data-tr="d.save">Save</button>
       <div class="drmood"><span class="drml">How do you feel today?</span><div id="drMood"><button type="button" data-m="1" aria-label="Very low">😞</button><button type="button" data-m="2" aria-label="Low">🙁</button><button type="button" data-m="3" aria-label="Okay">😐</button><button type="button" data-m="4" aria-label="Good">🙂</button><button type="button" data-m="5" aria-label="Great">😄</button></div></div>
       <div class="drcare" id="drCare" hidden>💛 Having a rough time? You don't have to push through alone. Talk to someone now: <a href="tel:131114">Lifeline 13 11 14</a> (24/7), or <a href="#wellbeing">see more free help →</a></div>
     </section>
@@ -509,7 +512,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <section class="tgroup g-find"><h3 class="ghead" id="gh-find"><span class="gic" aria-hidden="true">🔎</span><span class="gt">Find work</span><small>Search, apply, track</small></h3><nav class="tiles" aria-label="Find work"><a class="tile main" href="#find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><b>Find jobs</b><span>Claude finds jobs for you and writes your resume.</span></a><a class="tile" href="#where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg><b>Where to look</b><span>Job sites, agencies and companies.</span></a><a class="tile" href="#alerts"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Daily job emails</b><span>New jobs sent to your email every day.</span></a><a class="tile" href="#pay" id="tileCmp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></svg><b>Compare jobs</b><span>Put 2 or 3 offers side by side. See which pays more.</span></a><a class="tile wide" href="#gap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h5M15 12h5M9 8l-2 4 2 4M15 8l2 4-2 4"/></svg><b>Fill my gap</b><span>Short jobs, shutdowns and days off between swings.</span></a><a class="tile wide" href="#tracker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17"/></svg><b>My applications</b><span>Track jobs you applied for.</span></a></nav></section>
 <section class="tgroup g-ready"><h3 class="ghead" id="gh-ready"><span class="gic" aria-hidden="true">🎒</span><span class="gt">Get ready</span><small>Before you start</small></h3><nav class="tiles" aria-label="Get ready"><a class="tile" href="#newcomer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><b>New arrival checklist</b><span>Get set up before you apply.</span></a><a class="tile" href="#training"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h10M7 12h6"/></svg><b>Tickets & training money</b><span>Tickets, expiry reminders and course refund claims.</span></a><a class="tile" href="#medical"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg><b>Medical test prep</b><span>What to expect at your pre-start medical.</span></a><a class="tile" href="#resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><b>Resume check</b><span>Free checklist for your resume.</span></a><a class="tile" href="#interview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><b>Interview practice</b><span>Common questions and tips.</span></a><a class="tile" href="#scam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="M12 8v5M12 16.5v.5"/></svg><b>Scam check</b><span>Is this job offer real?</span></a><a class="tile" href="#rights"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg><b>Rights at work</b><span>Pay, super, safety, visa rights and free help.</span></a></nav></section>
 <section class="tgroup g-money"><h3 class="ghead" id="gh-money"><span class="gic" aria-hidden="true">💰</span><span class="gt">Money</span><small>Pay, tax, super, goals</small></h3><nav class="tiles" aria-label="Money"><a class="tile" href="#pay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c0-1.7-2-3-4.5-3s-4.5 1.3-4.5 3 2 2.6 4.5 3 4.5 1.3 4.5 3.2-2 3-4.5 3-4.5-1.3-4.5-3"/></svg><b>Pay & payslips</b><span>Take-home pay, payslip check, compare offers.</span></a><a class="tile" href="#super"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16v-4M10 16V8M14 16v-6M18 16V5"/></svg><b>Super</b><span>Best performing funds and what yours could grow to.</span></a><a class="tile" href="#whm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><b>Working holiday year</b><span>Plan your year: pay, tax, super back when you leave.</span></a><a class="tile" href="#goals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg><b>Swing goals</b><span>How many swings to your trip, ute or house.</span></a></nav></section>
-<section class="tgroup g-swing"><h3 class="ghead" id="gh-swing"><span class="gic" aria-hidden="true">✈️</span><span class="gt">Swings & dates</span><small>Rosters, flights, wellbeing</small></h3><nav class="tiles" aria-label="Swings & dates"><a class="tile" href="#swings"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Swing planner</b><span>Swing dates, flights and days-off trips.</span></a><a class="tile" href="#calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M12 14h2M16 14h2M8 17h2"/></svg><b>My dates</b><span>Every date in one list, to your calendar.</span></a><a class="tile wide" href="#pack"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M4 13h16"/></svg><b data-tr="p.tile">Swing packing list</b><span data-tr="p.tiled">Tick off what to bring, from neck pillow to sunscreen.</span></a><a class="tile wide" href="#wellbeing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg><b>Wellbeing</b><span>Free help lines, sleep, family and looking out for mates.</span></a></nav></section>
+<section class="tgroup g-swing"><h3 class="ghead" id="gh-swing"><span class="gic" aria-hidden="true">✈️</span><span class="gt">Swings & dates</span><small>Rosters, flights, wellbeing</small></h3><nav class="tiles" aria-label="Swings & dates"><a class="tile" href="#swings"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Swing planner</b><span>Swing dates, flights and days-off trips.</span></a><a class="tile" href="#calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M12 14h2M16 14h2M8 17h2"/></svg><b>My dates</b><span>Every date in one list, to your calendar.</span></a><a class="tile wide" href="#pack"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M4 13h16"/></svg><b data-tr="p.tile">Swing packing list</b><span data-tr="p.tiled">Tick off what to bring, from neck pillow to sunscreen.</span></a><a class="tile wide" href="#sauna"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3-2 4-2 7a3 3 0 0 0 6 0c0-1-.5-2-1-3"/><path d="M5 20h14"/></svg><b>Find a sauna near me</b><span>Alchemy, Neighbourhood Sauna, pools, yoga and more.</span></a><a class="tile wide" href="#wellbeing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg><b>Wellbeing</b><span>Free help lines, sleep, family and looking out for mates.</span></a></nav></section>
 <section class="tgroup g-more"><h3 class="ghead" id="gh-more"><span class="gic" aria-hidden="true">⭐</span><span class="gt">More</span><small>Help, share, your data</small></h3><nav class="tiles" aria-label="More"><a class="tile" href="#words"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7a3 3 0 0 1 3 3v12a3 3 0 0 0-3-3H4zM20 5h-6"/><path d="M20 5v12h-6"/></svg><b>Words explained</b><span>FIFO, roster, ticket, super and more.</span></a><a class="tile" href="#stories"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.5 6 .8-4.4 4.2 1.1 6L12 16.6 6.7 19.5l1.1-6L3.4 9.3l6-.8z"/></svg><b>Success stories</b><span>People who got work, and what they did next.</span></a><a class="tile" href="#share"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 11 7.6-3.8M8.2 13l7.6 3.8"/></svg><b>Share this kit</b><span>Poster, QR code and share with a mate.</span></a><a class="tile" href="#value"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 15l4-4 3 3 5-6"/><path d="M15 8h3v3"/></svg><b>What the kit saved you</b><span>Time, money and hassle saved, from what you've done here.</span></a><a class="tile wide" href="#files"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><b data-tr="f.tile">My files</b><span data-tr="f.tiled">Resume, payslips, flights and screenshots, kept on this phone.</span></a><a class="tile wide" href="#data"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><b>My data</b><span>Save, move or delete your details.</span></a></nav></section>
 
     <div class="matebar"><div><b>🤝 Know someone looking for FIFO work?</b><span class="small mutedt">Send them the kit. It's free.</span></div><button type="button" class="btn primary" data-email="mate">Share with a mate</button></div>
@@ -1384,6 +1387,47 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     </div>
   </div>
 
+  <div class="view" id="v-sauna" hidden>
+    <div class="vhead"><h2 class="big2">Find a sauna near me</h2><p class="lede">Heat and cold are a great way to reset on your swing off. Tap to open Google Maps on your phone and it finds the closest one.</p></div>
+    <div class="panel">
+      <h3>📍 Nearest to you <small>(10 sec)</small></h3>
+      <a class="sauLink" href="https://www.google.com/maps/search/sauna+near+me" target="_blank" rel="noopener"><b>Sauna near me</b><span>Opens Maps with your location</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/Alchemy+Saunas" target="_blank" rel="noopener"><b>Alchemy Saunas near me</b><span>Beach and river saunas, book online</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/The+Neighbourhood+Sauna" target="_blank" rel="noopener"><b>Neighbourhood Sauna near me</b><span>Beach and city saunas, with cold plunge</span></a>
+    </div>
+    <div class="panel">
+      <h3>🏊 Rec centres: pool + sauna + steam <small>(30 sec)</small></h3>
+      <a class="sauLink" href="https://www.google.com/maps/search/leisure+centre+sauna+steam+room+near+me" target="_blank" rel="noopener"><b>Rec centre with sauna near me</b><span>Council pools often have sauna, steam room and spa for a low entry price</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/aquatic+centre+near+me" target="_blank" rel="noopener"><b>Aquatic centre near me</b><span>Lap swimming is great for stiff backs after a swing</span></a>
+      <a class="sauLink" href="https://www.beattypark.com.au/aquatics/sauna-steam-room.aspx" target="_blank" rel="noopener"><b>Beatty Park, North Perth</b><span>Sauna and steam room with pool access</span></a>
+      <p class="sauNote">Check each centre's sauna hours and entry price on their site. Some are separate from general pool entry.</p>
+    </div>
+    <div class="panel">
+      <h3>🔥 Perth picks <small>(1 min)</small></h3>
+      <p class="sauNote">Locations from public listings. Venues open and close, so check hours and booking on their site first.</p>
+      <ul class="sauList">
+        <li><b>Alchemy Saunas</b> – Port Beach (North Fremantle), Point Walter (Bicton), George St (East Fremantle). More planned, including West Leederville. Booking system, so reserve ahead. <a href="https://alchemysaunas.com.au/" target="_blank" rel="noopener">alchemysaunas.com.au</a></li>
+        <li><b>The Neighbourhood Sauna</b> – South Beach (South Fremantle) Finnish sauna steps from the ocean, plus South Terrace (Fremantle) and Hillarys Boat Harbour. Hot and cold therapy. <a href="https://theneighbourhoodsauna.com/" target="_blank" rel="noopener">theneighbourhoodsauna.com</a></li>
+        <li><b>Beatty Park, North Perth</b> – sauna and steam room with pool access. Often the cheapest option. <a href="https://www.beattypark.com.au/aquatics/sauna-steam-room.aspx" target="_blank" rel="noopener">beattypark.com.au</a></li>
+        <li><b>Infrared and float studios</b> – Helix House (Cottesloe, Victoria Park), Clear Mind (Inglewood, Fremantle), Float Lab (Currambine, Wembley, North Beach), Beyond Rest (Perth, Wembley).</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>🌿 More ways to recover <small>(1 min)</small></h3>
+      <a class="sauLink" href="https://www.google.com/maps/search/swimming+beach+near+me" target="_blank" rel="noopener"><b>Ocean or river swim spots</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/reformer+pilates+near+me" target="_blank" rel="noopener"><b>Reformer Pilates</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/hot+yoga+near+me" target="_blank" rel="noopener"><b>Hot yoga</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/yoga+classes+near+me" target="_blank" rel="noopener"><b>Yoga classes</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/remedial+thai+massage+near+me" target="_blank" rel="noopener"><b>Remedial and Thai massage</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/float+tank+near+me" target="_blank" rel="noopener"><b>Float tanks</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/ice+bath+cold+plunge+near+me" target="_blank" rel="noopener"><b>Cold plunge / ice bath</b></a>
+    </div>
+    <div class="panel">
+      <h3>⚠️ Stay safe <small>(20 sec)</small></h3>
+      <ul class="sauList"><li>Drink water before and after. No alcohol first.</li><li>Start short (10 to 15 min) and get out if dizzy or unwell.</li><li>Cold plunge: ease in, never swim alone in the ocean.</li><li>Pregnant, heart or blood pressure issues: ask your doctor first.</li></ul>
+    </div>
+  </div>
+
 <!-- SWING GOALS -->
   <div class="view" id="v-goals" hidden>
     <div class="vhead"><h2 class="big2">Swing goals</h2><p class="lede">Pick what you are working for. See how many swings it takes and when you get there.</p></div>
@@ -2195,7 +2239,7 @@ const addDays=(s,n)=>{const d=new Date(s+'T00:00:00');d.setDate(d.getDate()+n);d
 function copyText(txt,toast,fb){const done=()=>{$(toast).textContent='Copied';setTimeout(()=>$(toast).textContent='',2500)};const f=()=>{const e=$(fb);e.hidden=false;e.value=txt;e.select();$(toast).textContent='Select all and copy the text below'};try{navigator.clipboard.writeText(txt).then(done,f)}catch(e){f()}}
 
 /* ---------- routing ---------- */
-const VIEWS=['home','tjobs','gap','tmoney','tgoals','twell','find','where','alerts','tracker','pay','super','whm','training','newcomer','words','resume','scam','share','interview','swings','data','goals','stories','value','calendar','rights','wellbeing','medical','skin','breath','hydrate','files','pack'];
+const VIEWS=['home','tjobs','gap','tmoney','tgoals','twell','find','where','alerts','tracker','pay','super','whm','training','newcomer','words','resume','scam','share','interview','swings','data','goals','stories','value','calendar','rights','wellbeing','medical','skin','breath','hydrate','files','pack','sauna'];
 function route(){
   let h=(location.hash||'').replace('#','');
   if(VIEWS.indexOf(h)<0) h='home';
@@ -3677,17 +3721,27 @@ function renderDR(){
     var cb=document.createElement('input'); cb.type='checkbox'; cb.checked=on; cb.dataset.h=h[0]; var sp=document.createElement('span'); sp.textContent=h[1]+' '+h[2];
     lab.appendChild(cb); lab.appendChild(sp); L.appendChild(lab); });
   $('drGrat').value=t.grat||'';
+  var tot=habits().length, dn=t.h.filter(function(x){return habits().some(function(h){return h[0]===x})}).length, TR_=function(k,o){return window.fifoTr?window.fifoTr(k,o):(k==='d.next'?'Next: '+o.h:'🎉 All done for today')};
+  if($('drBar')) $('drBar').style.width=Math.round(dn/tot*100)+'%';
+  var updHint=function(){ var nx=document.querySelector('#drList .drit:not(.on) span'); if($('drNext')){ $('drNext').textContent= nx? TR_('d.next',{h:nx.textContent}) : TR_('d.alldone'); $('drNext').disabled=!nx; } }; updHint(); setTimeout(updHint,120);
   Array.prototype.forEach.call($('drMood').querySelectorAll('button'),function(b){ b.classList.toggle('on',+b.dataset.m===t.mood); });
   var low=0; for(var i=0;i<3;i++){ var d=D.days[dayKey(-i)]; if(d&&d.mood&&d.mood<=2) low++; } $('drCare').hidden=!(low>=2||(t.mood===1));
   var up=$('drUp'); if(D.lv<5&&D.full>=5){ up.hidden=false; up.innerHTML=''; var p=document.createElement('div'); p.textContent='🌟 5 full days at this level! Ready to upgrade your routine? You will add: '+H.filter(function(h){return h[3]===D.lv+1}).map(function(h){return h[1]+' '+h[2]}).join(' and ')+'.'; var b=document.createElement('button'); b.type='button'; b.className='drb'; b.textContent='⬆️ Level up my routine'; b.addEventListener('click',function(){ D.lv++; D.full=0; sv(); renderDR(); window.fifoCelebrate('⬆️ Level '+D.lv+': '+LVN[D.lv]+'!','New habits unlocked. You are getting stronger.',{e:'⬆️',t:'Level '+D.lv+' routine',s:'Daily Reset: '+LVN[D.lv]}); }); up.appendChild(p); up.appendChild(b); } else up.hidden=true;
 }
+function flash(){ var e=$('drSaved'); if(!e) return; e.textContent=window.fifoTr?window.fifoTr('d.saved'):'✓ Saved'; clearTimeout(flash.t); flash.t=setTimeout(function(){e.textContent='';},1800); }
+function goNext(){ var el=document.querySelector('#drList .drit:not(.on)'); if(!el) return; el.scrollIntoView({block:'center',behavior:'smooth'}); el.classList.add('pulse'); setTimeout(function(){el.classList.remove('pulse');},1600); }
+window.fifoDrRender=function(){ renderDR(); };
 function tick(id,on){ var t=tday(), wasFull=isFull(t), i=t.h.indexOf(id); if(on&&i<0) t.h.push(id); if(!on&&i>=0) t.h.splice(i,1);
   var nowFull=isFull(t); if(nowFull&&!wasFull&&!t.cel){ t.cel=1; D.full=(D.full||0)+1; window.fifoCelebrate('🌿 Daily Reset done!','You looked after yourself today. That is how you keep earning and stay happy.',{e:'🌿',t:'Daily Reset done',s:streak()+'-day streak'}); }
-  sv(); renderDR(); checkBadges(); }
+  sv(); renderDR(); flash(); checkBadges(); }
 if($('drList')){
   $('drList').addEventListener('change',function(e){ var h=e.target.dataset&&e.target.dataset.h; if(h) tick(h,e.target.checked); });
-  $('drGrat').addEventListener('change',function(){ var t=tday(); t.grat=this.value.trim(); sv(); if(t.grat&&D.lv>=2) tick('grat',true); });
-  $('drMood').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; tday().mood=+b.dataset.m; sv(); renderDR(); });
+  function saveGrat(){ var t=tday(); t.grat=$('drGrat').value.trim(); sv(); if(t.grat&&D.lv>=2) tick('grat',true); else { renderDR(); flash(); } }
+  $('drGrat').addEventListener('change',saveGrat);
+  $('drGrat').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); saveGrat(); this.blur(); setTimeout(goNext,150); } });
+  $('drGratSave').addEventListener('click',function(){ saveGrat(); $('drGrat').blur(); setTimeout(goNext,150); });
+  $('drNext').addEventListener('click',goNext);
+  $('drMood').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; tday().mood=+b.dataset.m; sv(); renderDR(); flash(); });
   var timer=null;
   function stopBr(){ clearInterval(timer); timer=null; $('drBr').hidden=true; $('drBreath').hidden=false; $('drCircle').style.transform='scale(.6)'; }
   $('drBreath').addEventListener('click',function(){ $('drBreath').hidden=true; $('drBr').hidden=false; var steps=[['Breathe in',1],['Hold',1],['Breathe out',.6],['Hold',.6]], i=0, n=0;
@@ -4127,7 +4181,8 @@ var EN={
 't.hard':'<b>Hard water:</b> a lot of WA water is hard, which is the white calcite scale you see on a kettle element. It is safe to drink. Some people take magnesium to keep their calcium and magnesium in balance. Early animal research on kidney stones is promising, but it is not proven in people yet.',
 'a.t':'Add the kit to your home screen','a.d':'It opens like an app and works without internet.','a.b':'Add','a.no':'Not now','a.ios':'Tap the Share button, then Add to Home Screen.',
 'c.btn':'📅 Add all my dates to my phone calendar','c.done':'Calendar file ready. Open it to add your dates.','c.none':'No dates yet. Add your swing dates first.',
-'u.del':'Deleted','u.undo':'Undo','e.first':'Add your first one','x.hide':'Hide this section','x.show':'Show this section'
+'u.del':'Deleted','u.undo':'Undo','e.first':'Add your first one','x.hide':'Hide this section','x.show':'Show this section',
+'d.saved':'✓ Saved','d.next':'Next: {h}','d.save':'Save','d.alldone':'🎉 All done for today'
 };
 var KEYS=Object.keys(EN);
 function lang(){try{return localStorage.getItem('fifokit_lang')||'en'}catch(e){return'en'}}
@@ -4321,8 +4376,8 @@ a2();
 document.addEventListener('click',function(e){var a=e.target.closest('[data-fcat]');if(a){seen=1;cat=a.dataset.fcat}});
 function onHash(){if(location.hash!=='#files'&&!$('mfView').hidden)vClose();if(location.hash==='#files')render();if(location.hash==='#pack')pkRender()}
 window.addEventListener('hashchange',onHash);
-window.fifoTr=tr;window.fifoLangHook=function(){applyT();render();pkRender();a2();['mh','dr','tips'].forEach(function(i){var e=$(i);e&&e._foldSet&&e._foldSet()})};
-applyT();pkRender();onHash();
+window.fifoTr=tr;window.fifoLangHook=function(){applyT();render();pkRender();a2();window.fifoDrRender&&window.fifoDrRender();['mh','dr','tips'].forEach(function(i){var e=$(i);e&&e._foldSet&&e._foldSet()})};
+applyT();pkRender();onHash();window.fifoDrRender&&window.fifoDrRender();
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 })();
 </script>

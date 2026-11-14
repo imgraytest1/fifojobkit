@@ -49,17 +49,17 @@
 /* Layout: single narrow column, sticky brand bar, three numbered steps (a real sequence), prompt output at the end */
 :root{
   --bg:#f3f1ec; --surface:#ffffff; --ink:#1d1f22; --muted:#5d5f63; --line:#dcd8cf;
-  --hivis:#bb3b09; --hivis-soft:#d9936d; --hivis-ink:#ffffff; --gold:#a57c1b; --chip:#efe9dc; --chip-on:#1d1f22; --chip-on-ink:#f3f1ec; --good:#2c7546; --g-ready:#1c64c4; --g-money:#2c7546; --g-swing:#7a45c0; --g-more:#9a6f10;
+  --hivis:#9c4f2e; --hivis-soft:#d9bfae; --hivis-ink:#ffffff; --gold:#a57c1b; --chip:#efe9dc; --chip-on:#1d1f22; --chip-on-ink:#f3f1ec; --good:#2c7546; --g-ready:#1c64c4; --g-money:#2c7546; --g-swing:#7a45c0; --g-more:#9a6f10;
   --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#131416; --surface:#1c1e21; --ink:#ece8df; --muted:#a3a29d; --line:#33353a;
-  --hivis:#ff7a3d; --hivis-soft:#9a5a38; --hivis-ink:#131416; --gold:#d9b25a; --chip:#26282c; --chip-on:#ece8df; --chip-on-ink:#131416; --good:#6cc08a; --g-ready:#6aa8ff; --g-money:#6cc08a; --g-swing:#b893f2; --g-more:#d9b25a; color-scheme:dark}}
+  --hivis:#d89b78; --hivis-soft:#6b5043; --hivis-ink:#131416; --gold:#d9b25a; --chip:#26282c; --chip-on:#ece8df; --chip-on-ink:#131416; --good:#6cc08a; --g-ready:#6aa8ff; --g-money:#6cc08a; --g-swing:#b893f2; --g-more:#d9b25a; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#131416; --surface:#1c1e21; --ink:#ece8df; --muted:#a3a29d; --line:#33353a;
-  --hivis:#ff7a3d; --hivis-soft:#9a5a38; --hivis-ink:#131416; --gold:#d9b25a; --chip:#26282c; --chip-on:#ece8df; --chip-on-ink:#131416; --good:#6cc08a; --g-ready:#6aa8ff; --g-money:#6cc08a; --g-swing:#b893f2; --g-more:#d9b25a; color-scheme:dark}
+  --hivis:#d89b78; --hivis-soft:#6b5043; --hivis-ink:#131416; --gold:#d9b25a; --chip:#26282c; --chip-on:#ece8df; --chip-on-ink:#131416; --good:#6cc08a; --g-ready:#6aa8ff; --g-money:#6cc08a; --g-swing:#b893f2; --g-more:#d9b25a; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
@@ -1413,11 +1413,17 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
       </ul>
     </div>
     <div class="panel">
+      <h3>🧘 Yoga &amp; Pilates classes near me <small>(20 sec)</small></h3>
+      <a class="sauLink" href="https://www.google.com/maps/search/yoga+classes+near+me" target="_blank" rel="noopener"><b>Yoga classes near me</b><span>Opens Maps with your location</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/hot+yoga+near+me" target="_blank" rel="noopener"><b>Hot yoga near me</b><span>Heated room, drink plenty of water</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/yin+yoga+near+me" target="_blank" rel="noopener"><b>Yin or restorative yoga</b><span>Slow and gentle, best after a hard swing</span></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/reformer+pilates+near+me" target="_blank" rel="noopener"><b>Reformer Pilates near me</b></a>
+      <a class="sauLink" href="https://www.google.com/maps/search/pilates+classes+near+me" target="_blank" rel="noopener"><b>Mat Pilates near me</b></a>
+      <p class="sauNote">Many studios give a cheap first class or trial week. Check their site for times and casual prices.</p>
+    </div>
+    <div class="panel">
       <h3>🌿 More ways to recover <small>(1 min)</small></h3>
       <a class="sauLink" href="https://www.google.com/maps/search/swimming+beach+near+me" target="_blank" rel="noopener"><b>Ocean or river swim spots</b></a>
-      <a class="sauLink" href="https://www.google.com/maps/search/reformer+pilates+near+me" target="_blank" rel="noopener"><b>Reformer Pilates</b></a>
-      <a class="sauLink" href="https://www.google.com/maps/search/hot+yoga+near+me" target="_blank" rel="noopener"><b>Hot yoga</b></a>
-      <a class="sauLink" href="https://www.google.com/maps/search/yoga+classes+near+me" target="_blank" rel="noopener"><b>Yoga classes</b></a>
       <a class="sauLink" href="https://www.google.com/maps/search/thai+massage+near+me" target="_blank" rel="noopener"><b>Thai massage near me</b><span>Traditional Thai, great for stiff hips and backs</span></a>
       <a class="sauLink" href="https://www.google.com/maps/search/remedial+massage+near+me" target="_blank" rel="noopener"><b>Remedial massage near me</b><span>Often HICAPS or health fund claimable, ask first</span></a>
       <a class="sauLink" href="https://www.google.com/maps/search/sports+massage+near+me" target="_blank" rel="noopener"><b>Sports / deep tissue massage</b></a>

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Free FIFO Job Kit: find fly-in fly-out mining and construction jobs in Australia, see your real pay per swing in your own currency, get your tickets, and hit your savings goals. 12 languages, no sign-up."><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.mailerlite.com; font-src 'self' https://fonts.gstatic.com https://*.mailerlite.com; img-src 'self' data: blob: https://*.mailerlite.com; connect-src 'self' https://cloudflareinsights.com https://*.mailerlite.com; frame-src https://*.mailerlite.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.mailerlite.com"><meta name="referrer" content="strict-origin-when-cross-origin"><script>if(window.top!==window.self){try{window.top.location=window.self.location.href}catch(e){document.documentElement.style.display="none"}}</script><meta name="theme-color" content="#d9480f"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icons/icon-192.png"><link rel="apple-touch-icon" href="/icons/icon-180.png"><meta property="og:title" content="FIFO Job Kit: free help to get FIFO work"><meta property="og:description" content="Tickets, real pay after tax, jobs, resume and savings goals. Free, no sign-up."><meta property="og:image" content="https://fifojobkit.com/icons/icon-512.png"><meta property="og:url" content="https://fifojobkit.com/"><!-- MailerLite Universal -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Free FIFO Job Kit: find fly-in fly-out mining and construction jobs in Australia, see your real pay per swing in your own currency, get your tickets, and hit your savings goals. 12 languages, no sign-up."><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com https://*.mailerlite.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; worker-src blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.mailerlite.com; font-src 'self' https://fonts.gstatic.com https://*.mailerlite.com; img-src 'self' data: blob: https://*.mailerlite.com; connect-src 'self' https://cloudflareinsights.com https://*.mailerlite.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://tessdata.projectnaptha.com; frame-src https://*.mailerlite.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.mailerlite.com"><meta name="referrer" content="strict-origin-when-cross-origin"><script>if(window.top!==window.self){try{window.top.location=window.self.location.href}catch(e){document.documentElement.style.display="none"}}</script><meta name="theme-color" content="#d9480f"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icons/icon-192.png"><link rel="apple-touch-icon" href="/icons/icon-180.png"><meta property="og:title" content="FIFO Job Kit: free help to get FIFO work"><meta property="og:description" content="Tickets, real pay after tax, jobs, resume and savings goals. Free, no sign-up."><meta property="og:image" content="https://fifojobkit.com/icons/icon-512.png"><meta property="og:url" content="https://fifojobkit.com/"><!-- MailerLite Universal -->
 <style id="qrsrc-css">
 .qrbtn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;padding:0}
 .qrbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -800,9 +800,9 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <div id="pane-slip" role="tabpanel" aria-labelledby="tab-slip" hidden>
       <div class="panel">
         <h3>Load your payslip</h3>
-        <p class="small mutedt">Choose a PDF payslip, or copy the text from your pay app or email and paste it here. Your phone reads the numbers. They never leave your phone. Photo or scanned payslip? Type the numbers in the boxes below.</p>
+        <p class="small mutedt">Add your payslip as a screenshot, photo, PDF or any file. Your phone reads the numbers and they never leave your phone. Or paste the text below.</p>
+        <span data-picker="slipText"></span>
         <div class="row">
-          <label class="sbtn" for="slipFile" style="display:inline-flex">Choose PDF payslip<input id="slipFile" type="file" accept="application/pdf,.pdf" style="position:absolute;opacity:0;width:1px;height:1px"></label>
           <button id="slipSample" type="button" class="sbtn ghost">Load example</button>
         </div>
         <label class="f" for="slipText">Or paste payslip text<textarea id="slipText" placeholder="Paste the payslip text, then tap Read payslip"></textarea></label>
@@ -1047,10 +1047,10 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
 
   <!-- RESUME CHECK -->
   <div class="view" id="v-resume" hidden>
-    <div class="vhead"><h2 class="big2">Resume check</h2><p class="lede">Paste your resume or choose a PDF. You get a free checklist in seconds. Nothing leaves your phone.</p><a class="sbtn ghost" data-fcat="resume" href="#files" data-tr="f.link" style="display:inline-block;text-decoration:none;margin-top:8px">📎 My files</a></div>
+    <div class="vhead"><h2 class="big2">Resume check</h2><p class="lede">Paste your resume or add it as a PDF, photo or any file. You get a free checklist in seconds. Nothing leaves your phone.</p><a class="sbtn ghost" data-fcat="resume" href="#files" data-tr="f.link" style="display:inline-block;text-decoration:none;margin-top:8px">📎 My files</a></div>
     <div class="panel">
+      <span data-picker="rvText"></span>
       <div class="row">
-        <label class="sbtn" for="rvFile" style="display:inline-flex">Choose PDF resume<input id="rvFile" type="file" accept="application/pdf,.pdf" style="position:absolute;opacity:0;width:1px;height:1px"></label>
         <button type="button" class="sbtn ghost" id="rvSample">Load example</button>
       </div>
       <label class="f" for="rvText">Or paste your resume text<textarea id="rvText" style="min-height:160px" placeholder="Paste your whole resume here"></textarea></label>
@@ -1746,6 +1746,99 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <small class="copy" style="display:block;margin-top:6px;opacity:.75">© 2026 Awesome Alchemy. All rights reserved. FIFO Job Kit™ name, design, text and code may not be copied or reused without permission.</small>
   </footer>
 </main>
+<style id="fread-css">.fread{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}.fread .row label.sbtn{display:inline-flex;gap:6px;align-items:center;position:relative;min-height:44px}.tbl td.num,.tbl th.num{background:transparent;color:inherit;border-radius:0;letter-spacing:normal;padding:8px 10px}.tbl th.num{color:var(--muted);letter-spacing:.08em}.offer,.offers{min-width:0;max-width:100%;box-sizing:border-box}.offer .cgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr))}.tbl{overflow-x:visible}.tbl table{table-layout:auto}
+@media (max-width:600px){.tbl th,.tbl td{white-space:normal;padding:6px 5px;font-size:13px;overflow-wrap:anywhere}.tbl th{font-size:10px;letter-spacing:.04em}.tbl td.num,.tbl th.num{font-size:13px}
+.tbl.stack table,.tbl.stack tbody{display:block}.tbl.stack thead{display:none}
+.tbl.stack tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(86px,1fr));gap:2px 10px;padding:8px 2px;border-bottom:1px solid var(--line)}
+.tbl td.num,.tbl th.num{padding:6px 5px}.tbl.stack td,.tbl.stack td.num{display:block;border:0;padding:0;text-align:left!important}
+.tbl.stack td:first-child{grid-column:1/-1;font-weight:600;font-size:14px}
+.tbl.stack td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tbl.stack tr.hl{background:var(--chip)}.tbl.stack tr.hl td{background:transparent}}</style>
+<script>
+(function(){
+'use strict';
+var PDF='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/', OCRJS='https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js';
+var loaded={};
+function load(src){ return loaded[src]||(loaded[src]=new Promise(function(res,rej){ var s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=function(){ delete loaded[src]; rej(new Error('net')); }; document.head.appendChild(s); })); }
+function pdfLib(){ if(window.pdfjsLib) return Promise.resolve(); return load(PDF+'pdf.worker.min.js').then(function(){ return load(PDF+'pdf.min.js'); }); }
+
+/* ---- screenshots and photos: read the text on the phone ---- */
+var worker=null, say0=function(){};
+function ocrWorker(){ if(worker) return worker;
+  worker=load(OCRJS).then(function(){ return window.Tesseract.createWorker('eng',1,{logger:function(m){ if(m&&m.status==='recognizing text') say0('Reading the text… '+Math.round((m.progress||0)*100)+'%'); }}); }).catch(function(e){ worker=null; throw e; });
+  return worker; }
+function toCanvas(file){ return new Promise(function(res,rej){ var u=URL.createObjectURL(file), im=new Image();
+  im.onload=function(){ var w=im.naturalWidth, h=im.naturalHeight, k=Math.min(1,2400/Math.max(w,h)), c=document.createElement('canvas'); c.width=Math.round(w*k); c.height=Math.round(h*k); var x=c.getContext('2d'); x.fillStyle='#fff'; x.fillRect(0,0,c.width,c.height); x.drawImage(im,0,0,c.width,c.height); URL.revokeObjectURL(u); res(c); };
+  im.onerror=function(){ URL.revokeObjectURL(u); rej(new Error('img')); }; im.src=u; }); }
+function ocr(src,say){ say0=say||say0; say('Getting the reader ready… (first time only)'); return ocrWorker().then(function(w){ return w.recognize(src); }).then(function(r){ return r.data.text||''; }); }
+
+/* ---- PDF: text first, scanned pages fall back to reading the picture ---- */
+function readPdf(f,say){ return pdfLib().then(function(){ return f.arrayBuffer(); }).then(function(buf){ return window.pdfjsLib.getDocument({data:new Uint8Array(buf),isEvalSupported:false}).promise; }).then(function(doc){
+  var n=Math.min(doc.numPages,6), text='', p=Promise.resolve();
+  for(var i=1;i<=n;i++) (function(i){ p=p.then(function(){ return doc.getPage(i); }).then(function(pg){ return pg.getTextContent(); }).then(function(tc){ var last=null; tc.items.forEach(function(it){ var y=it.transform?it.transform[5]:null; text+=(last!==null&&y!==null&&Math.abs(y-last)>2?'\n':' ')+it.str; last=y; }); text+='\n'; }); })(i);
+  return p.then(function(){
+    if(text.replace(/\s/g,'').length>=20) return text;
+    var out='', q=Promise.resolve(), m=Math.min(doc.numPages,3);
+    for(var i=1;i<=m;i++) (function(i){ q=q.then(function(){ return doc.getPage(i); }).then(function(pg){ var vp=pg.getViewport({scale:2}), c=document.createElement('canvas'); c.width=vp.width; c.height=vp.height; return pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise.then(function(){ return ocr(c,say); }); }).then(function(t){ out+=t+'\n'; }); })(i);
+    return q.then(function(){ return out; }); }); }); }
+
+/* ---- Word and Excel files are zip files: open them with the browser's own unzip ---- */
+function unzip(buf){ var u=new Uint8Array(buf), dv=new DataView(buf), e=u.length-22; while(e>=0&&dv.getUint32(e,true)!==0x06054b50) e--; if(e<0) throw new Error('zip');
+  var n=dv.getUint16(e+10,true), p=dv.getUint32(e+16,true), files={};
+  for(var i=0;i<n;i++){ if(dv.getUint32(p,true)!==0x02014b50) break; var nl=dv.getUint16(p+28,true), el=dv.getUint16(p+30,true), cl=dv.getUint16(p+32,true); files[new TextDecoder().decode(u.subarray(p+46,p+46+nl))]={m:dv.getUint16(p+10,true),c:dv.getUint32(p+20,true),o:dv.getUint32(p+42,true)}; p+=46+nl+el+cl; }
+  return {has:function(k){ return !!files[k]; }, names:function(){ return Object.keys(files); }, get:function(k){ var f=files[k]; if(!f) return Promise.resolve(null); var nl=dv.getUint16(f.o+26,true), el=dv.getUint16(f.o+28,true), s=f.o+30+nl+el, d=u.subarray(s,s+f.c);
+    if(f.m===0) return Promise.resolve(new TextDecoder().decode(d));
+    if(typeof DecompressionStream==='undefined') return Promise.reject(new Error('old'));
+    return new Response(new Blob([d]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text(); } }; }
+function xml(s){ return s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/&#(\d+);/g,function(_,d){ return String.fromCharCode(+d); }).replace(/&amp;/g,'&'); }
+function readDocx(f){ return f.arrayBuffer().then(function(b){ return unzip(b).get('word/document.xml'); }).then(function(x){ if(!x) throw new Error('zip'); return xml(x.replace(/<\/w:p>/g,'\n').replace(/<w:tab\/>/g,'\t').replace(/<w:br\/>/g,'\n').replace(/<[^>]+>/g,'')); }); }
+function readXlsx(f){ return f.arrayBuffer().then(function(b){ var z=unzip(b); return Promise.all([z.get('xl/sharedStrings.xml'),z.get('xl/worksheets/sheet1.xml')]); }).then(function(r){ var ss=[]; (r[0]||'').replace(/<si>([\s\S]*?)<\/si>/g,function(_,si){ ss.push(xml((si.match(/<t[^>]*>([\s\S]*?)<\/t>/g)||[]).map(function(t){ return t.replace(/<[^>]+>/g,''); }).join(''))); });
+  var rows=[]; (r[1]||'').replace(/<row[^>]*>([\s\S]*?)<\/row>/g,function(_,row){ var cells=[]; row.replace(/<c ([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g,function(_,at,inner){ var v=(inner||'').match(/<v>([\s\S]*?)<\/v>/), t=(inner||'').match(/<t[^>]*>([\s\S]*?)<\/t>/), val=v?v[1]:(t?t[1]:''); if(/t="s"/.test(at)) val=ss[+val]||''; cells.push(xml(String(val))); }); rows.push(cells.join('\t')); });
+  return rows.join('\n'); }); }
+
+/* ---- plain text style files ---- */
+function readPlain(f,n){ return f.text().then(function(t){ if(/\.html?$/.test(n)) t=xml(t.replace(/<(script|style)[\s\S]*?<\/\1>/gi,'').replace(/<br\s*\/?>|<\/(p|div|tr|li|h\d)>/gi,'\n').replace(/<[^>]+>/g,' ')); else if(/\.rtf$/.test(n)) t=t.replace(/\\par[d]?/g,'\n').replace(/\\'[0-9a-f]{2}/gi,'').replace(/\\[a-z]+-?\d* ?/gi,'').replace(/[{}]/g,''); return t; }); }
+
+function fifoRead(f,say){ say=say||function(){}; var n=(f.name||'').toLowerCase(), t=f.type||'';
+  if(t.indexOf('image/')===0||/\.(png|jpe?g|webp|gif|bmp|heic|heif|tiff?)$/.test(n)) return toCanvas(f).then(function(c){ return ocr(c,say); });
+  if(t==='application/pdf'||/\.pdf$/.test(n)) return readPdf(f,say);
+  if(/\.docx$/.test(n)) return readDocx(f);
+  if(/\.xlsx$/.test(n)) return readXlsx(f);
+  if(t.indexOf('text/')===0||/\.(txt|csv|tsv|md|json|xml|html?|rtf|eml|ics|log)$/.test(n)) return readPlain(f,n);
+  return f.slice(0,4000).text().then(function(s){ if(s&&!/[\u0000-\u0008\u000e-\u001f]/.test(s)) return readPlain(f,n); throw new Error('type'); }); }
+window.fifoRead=fifoRead;
+
+/* ---- one shared button: add a file or take a photo, text goes into the box and the tool runs ---- */
+var GO={slipText:'slipRead',paste:'readBtn',fiText:'fiRead'};
+var HID='position:absolute;opacity:0;width:1px;height:1px';
+window.fifoPicker=function(cfg){ var a=cfg.replace(/"/g,''); return '<div class="fread"><div class="row"><label class="sbtn">📎 Add file or screenshot<input type="file" multiple data-fread="'+a+'" style="'+HID+'"></label><label class="sbtn ghost">📷 Take photo<input type="file" accept="image/*" capture="environment" data-fread="'+a+'" style="'+HID+'"></label></div><p class="small mutedt fread-say" aria-live="polite">Screenshot, photo, PDF, Word, Excel or text. Read on your phone, never uploaded.</p></div>'; };
+function fill(){ document.querySelectorAll('span[data-picker]').forEach(function(s){ s.outerHTML=window.fifoPicker(s.dataset.picker); });
+  ['paste','scText','ad','fiText'].forEach(function(id){ var ta=document.getElementById(id); if(!ta||document.querySelector('[data-fread="'+id+'"]')) return; var box=ta.closest('label')||ta; box.insertAdjacentHTML('beforebegin',window.fifoPicker(id)); }); }
+document.addEventListener('change',function(e){ var inp=e.target; if(!inp||!inp.matches||!inp.matches('input[data-fread]')) return;
+  var files=Array.prototype.slice.call(inp.files||[],0,4); inp.value=''; if(!files.length) return;
+  var cfg=inp.dataset.fread, root=inp.closest('.fread'), sayEl=root&&root.querySelector('.fread-say'), ta, go;
+  if(cfg==='@offer'){ var card=inp.closest('.offer'); ta=card&&card.querySelector('textarea[data-k="ad"]'); go=card&&card.querySelector('[data-act="read"]'); }
+  else { ta=document.getElementById(cfg); go=GO[cfg]?document.getElementById(GO[cfg]):null; }
+  var say=function(m){ if(sayEl) sayEl.textContent=m; };
+  if(!ta){ say('Could not find the box to fill.'); return; }
+  var out='', p=Promise.resolve();
+  files.forEach(function(f,i){ p=p.then(function(){ say('Reading '+f.name+'…'); return fifoRead(f,say); }).then(function(t){ out+=(out?'\n\n':'')+(t||'').trim(); }); });
+  p.then(function(){
+    if(out.replace(/\s/g,'').length<10){ say('Could not find any text in that. Try a clearer, closer screenshot, or type the numbers in.'); return; }
+    ta.value=out; ta.dispatchEvent(new Event('input',{bubbles:true})); if(go) go.click();
+    say('✅ Read '+files.length+' file'+(files.length>1?'s':'')+'. Check the numbers below are right.');
+  }).catch(function(err){ var m=err&&err.message; say(m==='type'?'Cannot read that kind of file. Open it and share it as a PDF, or take a screenshot.':m==='net'?'The reader needs a signal the first time. Connect and try again.':m==='old'?'This phone cannot open that file type. Screenshot it instead.':'Could not read that file. Try a screenshot of it instead.'); }); });
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fill); else fill();
+})();
+(function(){
+/* tables: label each cell from its column heading so wide tables can stack as cards on phones */
+var t=null;
+function label(){ t=null; document.querySelectorAll('.tbl table').forEach(function(tb){ var hs=[].map.call(tb.querySelectorAll('thead th'),function(h){ return h.textContent.trim(); }); if(!hs.length) return; tb.parentNode.classList.toggle('stack',hs.length>=5); tb.querySelectorAll('tbody tr').forEach(function(r){ [].forEach.call(r.children,function(c,i){ if(hs[i]&&c.getAttribute('data-label')!==hs[i]) c.setAttribute('data-label',hs[i]); }); }); }); }
+function soon(){ if(!t) t=setTimeout(label,120); }
+function start(){ label(); try{ new MutationObserver(soon).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
 <nav class="tabbar" aria-label="Main"><a href="#home" data-t="home"><span aria-hidden="true">🏠</span><b class="tb0">Today</b></a><a href="#tjobs" data-t="tjobs"><span aria-hidden="true">🔎</span><b class="tb1">Jobs</b></a><a href="#tmoney" data-t="tmoney"><span aria-hidden="true">💰</span><b class="tb2">Money</b></a><a href="#tgoals" data-t="tgoals"><span aria-hidden="true">✨</span><b class="tb3">Goals</b></a><a href="#twell" data-t="twell"><span aria-hidden="true">🌿</span><b class="tb4">Wellbeing</b></a></nav>
 
 
@@ -2151,23 +2244,6 @@ function renderSlip(){
 ['pDate','pFreq','pGross','pTax','pSuper','pNet','pHours','pRate','yGross','yTax','tfnGiven','tft'].forEach(id=>$(id).addEventListener('input',renderSlip));
 $('slipRead').addEventListener('click',()=>applySlip($('slipText').value));
 $('slipSample').addEventListener('click',()=>{ $('slipText').value=SLIP_SAMPLE; applySlip(SLIP_SAMPLE); });
-let pdfLoading=null;
-function loadScript(src){ return new Promise((res,rej)=>{ const sc=document.createElement('script'); sc.src=src; sc.onload=res; sc.onerror=rej; document.head.appendChild(sc); }); }
-function ensurePdf(){ if(window.pdfjsLib) return Promise.resolve(); if(!pdfLoading){ const b='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/'; pdfLoading=loadScript(b+'pdf.worker.min.js').then(()=>loadScript(b+'pdf.min.js')); } return pdfLoading; }
-$('slipFile').addEventListener('change',async e=>{
-  const file=e.target.files&&e.target.files[0]; if(!file) return;
-  $('slipFound').textContent='Reading '+file.name+'…';
-  try{
-    await ensurePdf();
-    const data=new Uint8Array(await file.arrayBuffer());
-    const doc=await window.pdfjsLib.getDocument({data, isEvalSupported:false}).promise;
-    let text=''; for(let i=1;i<=Math.min(doc.numPages,4);i++){ const pg=await doc.getPage(i); const tc=await pg.getTextContent(); text+=tc.items.map(it=>it.str).join(' ')+'\n'; }
-    if(text.replace(/\s/g,'').length<20){ $('slipFound').textContent='This PDF looks like a scanned image, so there is no text to read. Type the figures in below.'; return; }
-    $('slipText').value=text.trim(); applySlip(text);
-  }catch(err){ $('slipFound').textContent='Could not read that PDF. Copy the text from it and paste it above, or type the figures in.'; }
-  e.target.value='';
-});
-
 /* ---------- compare offers ---------- */
 let offers=[], seq=0;
 const CORE=['name','rate','allow','on','off'];
@@ -2179,7 +2255,7 @@ function drawOffers(){
     <div class="cgrid">${OF.map(([k,l,t])=>`<label class="f${CORE.includes(k)?'':' x'}">${l}<input data-k="${k}" type="${t}" ${t==='number'?'inputmode="decimal" min="0" step="any"':''} value="${String(o[k]??'').replace(/"/g,'&quot;')}"></label>`).join('')}
       <label class="f x">Super<select data-k="sup"><option value="plus"${o.sup==='plus'?' selected':''}>+ super</option><option value="inc"${o.sup==='inc'?' selected':''}>incl. super</option></select></label></div>
     <details class="x"><summary>🎁 Benefits worth money</summary><div class="cgrid">${OFB.map(([k,l,t])=>`<label class="f">${l}<input data-k="${k}" type="number" inputmode="decimal" min="0" step="any" value="${String(o[k]??'').replace(/"/g,'&quot;')}"></label>`).join('')}</div></details>
-    <details><summary>Paste this offer's ad</summary><textarea data-k="ad" placeholder="Paste the ad, then Read">${(o.ad||'').replace(/</g,'&lt;')}</textarea><button type="button" class="sbtn ghost" data-act="read">Read</button></details>
+    <details><summary>Paste or add this offer's ad</summary>${window.fifoPicker?window.fifoPicker('@offer'):''}<textarea data-k="ad" placeholder="Paste the ad, then Read">${(o.ad||'').replace(/</g,'&lt;')}</textarea><button type="button" class="sbtn ghost" data-act="read">Read</button></details>
     <button type="button" class="sbtn ghost rm" data-act="rm">Remove</button></div>`).join('');
 }
 $('offers').addEventListener('input',e=>{ const card=e.target.closest('.offer'), k=e.target.dataset.k; if(!card||!k) return; const o=offers.find(x=>x.id==card.dataset.id); o[k]=e.target.type==='number'? e.target.value : e.target.value; renderCmp(); });
@@ -2552,15 +2628,6 @@ function check(){
 $('rvText').addEventListener('input',check);
 $('rvSample').addEventListener('click',()=>{ $('rvText').value=SAMPLE; check(); });
 ['trade','tradeOther'].forEach(i=>$(i).addEventListener('change',check));
-let pdfP=null; const ld=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s);});
-$('rvFile').addEventListener('change',async e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; $('rvFound').textContent='Reading '+f.name+'…';
-  try{ if(!window.pdfjsLib){ const b='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/'; pdfP=pdfP||ld(b+'pdf.worker.min.js').then(()=>ld(b+'pdf.min.js')); await pdfP; }
-    const doc=await window.pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer()),isEvalSupported:false}).promise; let text='';
-    for(let i=1;i<=Math.min(doc.numPages,5);i++){ const pg=await doc.getPage(i); const tc=await pg.getTextContent(); let last=null; tc.items.forEach(it=>{ const y=it.transform?it.transform[5]:null; text+=(last!==null&&y!==null&&Math.abs(y-last)>2?'\n':' ')+it.str; last=y; }); text+='\n'; }
-    if(text.replace(/\s/g,'').length<40){ $('rvFound').textContent='This PDF is a scan or image, so there is no text to read. Copy the text from your resume file and paste it instead.'; }
-    else { $('rvText').value=text.trim(); $('rvFound').textContent='Read '+f.name+'.'; check(); }
-  }catch(err){ $('rvFound').textContent='Could not read that PDF. Copy the text from your resume and paste it above.'; }
-  e.target.value=''; });
 check();
 
 /* ---------- scam check ---------- */

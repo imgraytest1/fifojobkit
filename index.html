@@ -720,6 +720,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
           <option value="citizen">Australian citizen or permanent resident</option>
           <option value="nz">NZ citizen (444)</option>
           <option value="482">Skills in Demand / TSS (482), here 6+ months</option>
+          <option value="skilled">Skilled visa (189 / 190 / 491 / 186 / 187)</option>
           <option value="500">Student (500), course 6+ months</option>
           <option value="whm">Working holiday (417 / 462)</option>
           <option value="whmunreg">Working holiday, employer not ATO-registered</option>
@@ -2059,6 +2060,7 @@ const VISA = {
   citizen:{st:'res', note:'Taxed at resident rates with the tax-free threshold, plus the Medicare levy.'},
   nz:{st:'res', note:'NZ citizens living and working here are usually tax residents.'},
   '482':{st:'res', note:'Usually a tax resident once here 6+ months. If you are not entitled to Medicare, tick the exemption.'},
+  skilled:{st:'res', note:'Skilled visa holders (permanent or provisional) living here are usually tax residents: resident rates with the tax-free threshold, plus the Medicare levy. If you are not entitled to Medicare, tick the exemption.'},
   '500':{st:'res', note:'Usually a tax resident if your course runs 6+ months. Tick the Medicare exemption if it applies to you.'},
   whm:{st:'whm', note:'15% from the first dollar up to $45,000, no tax-free threshold or offsets. Only if your employer is ATO-registered.'},
   whmunreg:{st:'fr', note:'An unregistered employer must withhold at foreign resident rates: 30% from the first dollar.'},
@@ -2107,6 +2109,7 @@ function parseAd(t){
   if(m){ out.allow=+m[1]; found.push(`allowance $${m[1]}/shift`); }
   if(/(?:inc|incl|including|inclusive of)\.?\s*super/i.test(s)){ out.sup='inc'; found.push('super included'); } else if(/(?:\+|plus)\s*super/i.test(s)){ out.sup='plus'; found.push('+ super'); }
   if(/working holiday|\b417\b|\b462\b|backpacker/i.test(s)){ out.visa='whm'; found.push('working holiday visa'); }
+  else if(/skilled (?:independent|nominated|regional|migration|visa)|\b(?:189|190|491)\b\s*visa|visa\s*\b(?:189|190|491)\b/i.test(s)){ out.visa='skilled'; found.push('skilled visa'); }
   return {out,found};
 }
 /* one offer -> annual figures */

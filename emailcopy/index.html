@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><style>:root{color-scheme:light dark}body{margin:0}</style>
+<title>Welcome Email Copier</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<style>
+/* Layout: one column of four email cards, each with two big copy buttons, phone-first */
+:root{--bg:#f6f5f1;--fg:#1d2321;--mute:#5d6662;--card:#ffffff;--line:#dcdad2;--accent:#0b6b5c;--accent-fg:#ffffff;--ok:#1f7a3a;--font:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121715;--fg:#eceee9;--mute:#9aa49f;--card:#1a211e;--line:#2b3531;--accent:#3fc0a8;--accent-fg:#06211b;--ok:#6fd58b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121715;--fg:#eceee9;--mute:#9aa49f;--card:#1a211e;--line:#2b3531;--accent:#3fc0a8;--accent-fg:#06211b;--ok:#6fd58b;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.when{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600}
+h2{margin:0;font-size:1.1rem}
+.subj{font-weight:600;overflow-wrap:anywhere}
+pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font);font-size:.9rem;color:var(--mute);max-height:9.5em;overflow:auto;border-top:1px solid var(--line);padding-top:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+button{flex:1 1 140px;min-height:48px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);font:600 1rem var(--font);cursor:pointer}
+button.alt{background:transparent;color:var(--accent)}
+button:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+button.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.note{font-size:.85rem;color:var(--mute);margin:0}
+</style>
+<main>
+<h1>Welcome emails, ready to paste</h1>
+<p class="lead">Tap a button, then paste into MailerLite. {$name} is MailerLite's first-name tag, so leave it as is.</p>
+<div id="list" style="display:contents"></div>
+<p class="note">After pasting, check each link is tappable. MailerLite adds the unsubscribe link itself.</p>
+</main>
+<script>
+var U="https://fifojobkit.com";
+var E=[
+{w:"Email 1 · send straight away",s:"Welcome! Your 3 first steps to FIFO work",b:"G'day {$name},\n\nThanks for joining the FIFO Job Kit list. FIFO means Fly In, Fly Out. You fly to site, work your roster, then fly home for your days off. Meals and a room are usually included, so more of your pay goes into savings.\n\nStart with these 3 steps:\n\n1. Tap Start here in the kit and answer 3 quick questions.\n2. Check which tickets you already have.\n3. Use Know your real pay to see your pay after tax.\n\nOpen the FIFO Job Kit: "+U+"\n\nIn 2 days: the tickets that get you hired, and how to get course costs back.\n\nGray, FIFO Job Kit"},
+{w:"Email 2 · day 2",s:"The tickets that get you hired",b:"Hi {$name},\n\nMost FIFO jobs ask for a few basic tickets before day one. A ticket is a licence or a safety course.\n\n- White Card: needed for any construction site.\n- Working at Heights and Confined Space: common on mine sites.\n- A forklift, EWP or dogging licence can lift your pay.\n\nSome courses are cheaper or free through government funding, and some employers pay you back once you start. Open Tickets & course money in the kit to check.\n\nCheck your tickets: "+U+"\n\nIn 3 days: a resume that gets calls back.\n\nGray, FIFO Job Kit"},
+{w:"Email 3 · day 5",s:"A resume that gets calls back",b:"Hi {$name},\n\nRecruiters spend seconds on each resume. Make each one match the job.\n\n1. Save your resume once in the kit. It stays on your phone.\n2. Use Find jobs. Claude matches you to jobs and writes a resume for each one.\n3. Run Resume check before you send it.\n\nPut your tickets, safety record and roster availability near the top. Never put your TFN, licence numbers or bank details on a resume.\n\nBuild my resume: "+U+"\n\nIn 5 days: how to apply, follow up and avoid scams.\n\nGray, FIFO Job Kit"},
+{w:"Email 4 · day 10",s:"Apply, follow up, stay safe",b:"Hi {$name},\n\nThe people who land FIFO work apply often and follow up.\n\n- Apply to 5 to 10 jobs a week. Track them in My applications.\n- Call or email the recruiter 3 to 5 days after you apply.\n- Practise with Mock interview before any call.\n- Real employers never ask you to pay for a job. Use Scam check on any offer that asks for money.\n\nWhen you land a job, tap I got a job! in the kit. Your story helps the next person.\n\nOpen the FIFO Job Kit: "+U+"\n\nKnow someone looking for work? Forward this email. It's free.\n\nGray, FIFO Job Kit"}
+];
+function copy(t,btn){
+  var label=btn.dataset.l;
+  function ok(){btn.textContent="Copied ✓";btn.classList.add("done");setTimeout(function(){btn.textContent=label;btn.classList.remove("done")},1800)}
+  function fb(){var a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){btn.textContent="Press and hold text to copy"}document.body.removeChild(a)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else fb();
+}
+var L=document.getElementById("list");
+E.forEach(function(e){
+  var c=document.createElement("section");c.className="card";
+  var w=document.createElement("div");w.className="when";w.textContent=e.w;
+  var s=document.createElement("div");s.className="subj";s.textContent=e.s;
+  var p=document.createElement("pre");p.textContent=e.b;
+  var r=document.createElement("div");r.className="row";
+  [["Copy subject",e.s,""],["Copy body",e.b,"alt"]].forEach(function(x){
+    var b=document.createElement("button");b.type="button";b.textContent=x[0];b.dataset.l=x[0];if(x[2])b.className=x[2];
+    b.addEventListener("click",function(){copy(x[1],b)});r.appendChild(b);
+  });
+  c.append(w,s,r,p);L.appendChild(c);
+});
+</script>
+
+</html>

@@ -16,7 +16,7 @@
 #qrFull .qrow.on{display:flex}
 #qrFull .qrow a,#qrFull .qrow button{padding:12px 16px;border-radius:12px;border:2px solid #111;background:#fff;color:#111;font:700 17px system-ui,Arial;text-decoration:none;cursor:pointer}
 .bar .inner{gap:8px}.qrbtn{width:40px;height:40px}.bar .brand span{letter-spacing:.05em;font-size:11px}
-#srcCard{position:fixed;left:0;right:0;bottom:130px;z-index:900;display:none;justify-content:center;padding:0 10px max(10px,env(safe-area-inset-bottom))}
+#srcCard{position:fixed;left:0;right:0;bottom:76px;z-index:900;display:none;justify-content:center;padding:0 10px max(10px,env(safe-area-inset-bottom))}
 #srcCard.on{display:flex}
 #srcCard .box{width:100%;max-width:560px;background:var(--surface);color:var(--ink);border:2px solid var(--hivis-soft);border-radius:16px;padding:16px;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
 #srcCard h3{margin:0 0 4px;font-size:20px}#srcCard p{margin:0 0 10px;color:var(--muted);font-size:15px}
@@ -395,11 +395,11 @@ dl.words dd{margin:2px 0 0;color:var(--muted)}
 .drbr p{font:700 20px var(--f-display);text-transform:uppercase;margin:6px 0}.drup{background:rgba(255,210,122,.18);border-radius:8px;padding:10px;margin-top:10px;font-size:15px}.drup button{margin-top:8px;background:#ffd27a;color:#1d1f22}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.badges span{background:rgba(255,255,255,.12);border-radius:999px;padding:4px 10px;font-size:13px}
 
-.tabbar{position:fixed;left:0;right:0;bottom:56px;z-index:20;background:var(--surface);border-top:1px solid var(--line);display:flex;justify-content:center;padding:4px max(6px,env(safe-area-inset-left)) calc(4px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-right));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);display:flex;justify-content:center;padding:4px max(6px,env(safe-area-inset-left)) calc(4px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-right));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
 .tabbar a{flex:1;max-width:128px;display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 2px;text-decoration:none;color:var(--muted);border-radius:10px;min-height:52px}
 .tabbar a span{font-size:22px;line-height:1.1}.tabbar a b{font-size:12px;font-weight:600;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .tabbar a.on{color:var(--hivis);background:var(--chip)}.tabbar a.on b{font-weight:700}
-body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 .tview .vhead{margin-top:18px}.tgoal{border-radius:10px;padding:14px;margin-top:14px}
 .tease{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#14532d,#1d1f22);color:#fff;border-radius:10px;padding:14px;margin-top:14px;text-decoration:none}
 .tease .te{font-size:30px}.tease b{display:block;font:700 22px/1.15 var(--f-display);color:#7ee2a0}.tease span{font-size:14px;color:#d6e9db}.tease i{margin-left:auto;font-style:normal;font-size:22px;color:#ffd27a}
@@ -939,6 +939,14 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
     <div class="row"><button type="button" class="sbtn" id="tCopy">Copy my list</button><button type="button" class="sbtn" id="tSheet">📊 Copy as spreadsheet</button><button type="button" class="sbtn ghost" data-email="apps">📤 Send</button><span class="toast" id="tToast"></span></div>
     <p class="small mutedt" id="tSheetHint" style="margin:6px 0 0">📊 Copy as spreadsheet, then paste into Excel, Google Sheets or Numbers. Each detail goes in its own column.</p>
     <textarea id="tFallback" hidden readonly></textarea>
+  </div>
+
+  <div class="panel moneyp" id="payApps">
+    <h3>💳 Spend and send your pay</h3>
+    <p class="small mutedt" style="margin:0">Two money apps many travellers use. Wise is usually cheaper for sending money home. Revolut is handy for spending in other currencies.</p>
+    <div class="row" data-money="wise"></div>
+    <div class="row" data-money="revolut"></div>
+    <p class="small mutedt" style="margin:0">Wise and Revolut are not banks, so keep big savings in an Australian bank covered by the government guarantee. General information, not financial advice.</p>
   </div>
 
   <!-- SUPER -->
@@ -1570,7 +1578,7 @@ body{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
 
 
   <div class="view tview" id="v-tjobs" hidden><div class="vhead"><h2 class="big2 th1">🔎 Find work & get ready</h2><p class="lede tp1">Search, apply and track jobs. Get your tickets, resume and interview sorted.</p></div><div id="tJobsBody"></div></div>
-  <div class="view tview" id="v-tmoney" hidden><div class="vhead"><h2 class="big2 th2">💰 Money</h2><p class="lede tp2">See what a swing pays you, in your own currency. Check your payslip, tax and super.</p></div><div id="tMoneyBody"></div><section class="panel" id="revolutBox"><h3>💳 A money app for your swing pay <small>(20 sec)</small></h3><p class="small" style="margin:0 0 8px">Revolut is a money app many travellers use to spend and send money. Rewards and who qualifies are set by Revolut.</p><a class="btn primary" href="https://revolut.com/referral/?referral-code=gray4781h!NOV1-26-AR-AU-SAV-CTRL-H2&amp;geo-redirect" target="_blank" rel="noopener sponsored" style="display:block;text-align:center;text-decoration:none">Open a Revolut account</a><p class="small" style="margin:8px 0 0">Referral link: if you open an account, Gray (Awesome Alchemy) may get a reward. It costs you nothing. Compare other options too. Never share your TFN, licence or bank numbers with anyone through this kit.</p></section></div>
+  <div class="view tview" id="v-tmoney" hidden><div class="vhead"><h2 class="big2 th2">💰 Money</h2><p class="lede tp2">See what a swing pays you, in your own currency. Check your payslip, tax and super.</p></div><div id="tMoneyBody"></div><section class="panel" id="revolutBox"><h3>💳 A money app for your swing pay <small>(20 sec)</small></h3><p class="small" style="margin:0 0 8px">Revolut is a money app many travellers use to spend and send money. Rewards and who qualifies are set by Revolut.</p><a class="btn primary" href="https://revolut.com/referral/?referral-code=gray4781h!NOV1-26-AR-AU-SAV-CTRL-H2&amp;geo-redirect" target="_blank" rel="noopener sponsored" style="display:block;text-align:center;text-decoration:none">Open a Revolut account</a><p class="small" style="margin:8px 0 0">Referral link: if you open an account, Gray (Awesome Alchemy) may get a reward. It costs you nothing. Compare other options too. Never share your TFN, licence or bank numbers with anyone through this kit.</p></section><section class="panel moneyp" id="wiseBox"><h3>🌏 Sending money home?</h3><p class="small" style="margin:0 0 8px">Wise is usually cheaper than a bank for sending money overseas. Rewards and who qualifies are set by Wise.</p><div class="row" data-money="wise"></div></section></div>
   <div class="view tview" id="v-tgoals" hidden><div class="vhead"><h2 class="big2 th3">✨ My goals</h2><p class="lede tp3">Set your savings goal, tick off each swing and celebrate every win.</p></div><div class="mh tgoal" id="tGoalsBody"></div><div id="tGoalsMore"></div></div>
   <div class="view tview" id="v-twell" hidden><div class="vhead"><h2 class="big2 th4">🌿 Wellbeing</h2><p class="lede tp4">Feel good, sleep well and stay positive while you earn.</p></div><div id="tWellBody"></div><nav class="wnav" aria-label="More wellbeing help"><a href="#wellbeing"><span><b class="tl4">🆘 Free help lines: call or text now</b><span class="d">Free, private support 24/7 from Lifeline, MATES, Beyond Blue and more. Plus simple habits for sleep and mood.</span></span></a><a href="#hydrate"><span class="wi" aria-hidden="true">💧</span><span><b>Hydration and electrolytes</b><span class="d">How much to drink on shift, and mineral drinks with magnesium and potassium.</span></span></a><a href="#breath"><span class="wi" aria-hidden="true">🍺</span><span><b>Morning breath test</b><span class="d">What to expect at the alcohol test, and how to plan if you drink.</span></span></a><a href="#skin"><span class="wi" aria-hidden="true">🥥</span><span><b>Coconut oil skin routine</b><span class="d">Look after your skin before your shower, plus zinc sunscreen options.</span></span></a></nav><div id="tWellMore"></div></div>
   <div class="view" id="v-medical" hidden>
@@ -4476,7 +4484,7 @@ $('pkList').addEventListener('change',function(e){var k=e.target.dataset&&e.targ
 $('pkReset').addEventListener('click',function(){pk=[];try{localStorage.removeItem('fifokit_pack')}catch(x){}pkRender()});
 
 /* undo bar */
-var ub=document.createElement('div');ub.id='undoBar';ub.setAttribute('role','status');ub.style.cssText='display:none;position:fixed;left:16px;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:9000;background:#222;color:#fff;border-radius:10px;padding:8px 8px 8px 14px;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 4px 16px rgba(0,0,0,.45)';
+var ub=document.createElement('div');ub.id='undoBar';ub.setAttribute('role','status');ub.style.cssText='display:none;position:fixed;left:16px;right:16px;bottom:calc(78px + env(safe-area-inset-bottom,0px));z-index:9000;background:#222;color:#fff;border-radius:10px;padding:8px 8px 8px 14px;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 4px 16px rgba(0,0,0,.45)';
 ub.innerHTML='<span id="undoMsg"></span><button type="button" class="sbtn" id="undoBtn" style="margin:0;min-height:44px"></button>';document.body.appendChild(ub);
 var ut=null,uf=null;
 window.fifoUndo=function(fn){uf=fn;$('undoMsg').textContent=tr('u.del');$('undoBtn').textContent=tr('u.undo');ub.style.display='flex';clearTimeout(ut);ut=setTimeout(function(){ub.style.display='none';uf=null},7000)};

@@ -943,10 +943,16 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 
   <div class="panel moneyp" id="payApps">
     <h3>💳 Spend and send your pay</h3>
-    <p class="small mutedt" style="margin:0">Two money apps many travellers use. Wise is usually cheaper for sending money home. Revolut is handy for spending in other currencies.</p>
+    <p class="small mutedt" style="margin:0"><b>Send money home 🌏</b><br>Wise sends money overseas at the real exchange rate. Wise Australia is regulated by APRA as a limited deposit-taking institution.</p>
     <div class="row" data-money="wise"></div>
+    <p class="small mutedt" style="margin:0"><b>Open an Aussie bank account 🏦</b><br>Revolut Bank Australia is an APRA-licensed bank. Eligible deposits are covered by the Financial Claims Scheme up to $250,000.</p>
+    <ul class="small mutedt" style="margin:0;padding-left:18px">
+      <li>🌍 Hold and exchange 30+ currencies in the app</li>
+      <li>💳 Debit card that spends in local currency overseas</li>
+      <li>📱 Freeze your card, set limits and get alerts in the app</li>
+    </ul>
     <div class="row" data-money="revolut"></div>
-    <p class="small mutedt" style="margin:0">Wise and Revolut are not banks, so keep big savings in an Australian bank covered by the government guarantee. General information, not financial advice.</p>
+    <p class="small mutedt" style="margin:0">General information, not financial advice.</p>
   </div>
 
   <!-- SUPER -->
@@ -1056,7 +1062,7 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       <p class="small mutedt" style="margin:0">Spending in Australia? Revolut is a card app many travellers use.</p>
       <div class="row" data-money="revolut"></div>
       <p class="lastchk" data-chk="fees"></p>
-      <p class="small mutedt" style="margin:0">Wise and Revolut are not banks, so keep big savings in an Australian bank covered by the government guarantee. General information, not financial advice.</p>
+      <p class="small mutedt" style="margin:0">Wise is not a full bank. Revolut Bank Australia is an APRA-licensed bank, with eligible deposits covered by the government guarantee up to $250,000. General information, not financial advice.</p>
     </div>
   </div>
 
@@ -1872,7 +1878,7 @@ window.FIFO_SETTINGS={
   // Money partners (affiliate link, else plain site)
   money:{
     wise:{affiliate:'https://wise.com/invite/ahpc/grayt', site:'https://wise.com/au/', label:'Open a Wise account'},
-    revolut:{affiliate:'https://revolut.com/referral/?referral-code=gray4781h!NOV1-26-AR-AU-SAV-CTRL-H2&geo-redirect', site:'https://www.revolut.com/en-AU/', label:'Open a Revolut account'}
+    revolut:{affiliate:'https://revolut.com/referral/?referral-code=gray4781h!NOV2-26-AR-AU-SAV-CTRL-H2&geo-redirect', site:'https://www.revolut.com/en-AU/', label:'Open a Revolut account'}
   },
   // Approved success stories (only people who ticked consent)
   // {name:'Sam', trade:'Electrician', state:'WA', weeks:3, quote:'...', goal:'House deposit', video:'https://...'}
@@ -3271,7 +3277,7 @@ const MONEY=window.FIFO_SETTINGS.money;
 document.querySelectorAll('[data-money]').forEach(el=>{
   const m=MONEY[el.dataset.money]; if(!m) return;
   const url=m.affiliate||m.site;
-  el.innerHTML=`<a class="btn primary" href="${url}" target="_blank" rel="noopener sponsored">${m.label}</a>${m.affiliate?'<span class="small mutedt">Affiliate link: the kit may earn a small fee, at no cost to you.</span>':''}`;
+  el.innerHTML=`<a class="btn primary" href="${url}" target="_blank" rel="noopener sponsored">${m.label}</a>${m.affiliate?'<span class="small mutedt">I may earn a reward if you sign up. It costs you nothing.</span>':''}`;
 });
 })();
 </script>

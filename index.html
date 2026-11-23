@@ -1806,7 +1806,7 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       <p class="small" style="margin:0">Rough guide: <b>1 litre a day for every 20 kg</b> of body weight. Drink more if you are physically active, and more again in very hot weather.</p>
       <div class="cgrid"><label class="f" for="hyKg">Your weight (kg)<input id="hyKg" type="number" min="30" max="250" inputmode="numeric" value="80"></label></div>
       <div class="tbl"><table id="hyTable"><tbody></tbody></table></div>
-      <p class="small mutedt">Spread it through the day, a cup at a time. Add salt or an electrolyte drink when you sweat a lot. Rough guide only.</p>
+      <p class="small mutedt">* Plus more again for extra heat or tougher conditions. Spread it through the day, a cup at a time. Add salt or an electrolyte drink when you sweat a lot. Rough guide only.</p>
     </div>
     <div class="panel">
       <h3>🧂 Electrolyte drink options</h3>
@@ -2588,7 +2588,7 @@ function renderSS(){
 ['ssSal','ssAmt'].forEach(i=>$(i).addEventListener('input',renderSS));renderSS();
 function renderHy(){
   const kg=Math.max(30,Math.min(250,+document.getElementById('hyKg').value||80)), b=kg/20, f=n=>n.toFixed(1)+' L';
-  document.getElementById('hyTable').tBodies[0].innerHTML=[['Normal day',f(b)],['Active or physical shift',f(b+1)+' or more'],['Active and very hot',f(b+2)+' or more']].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
+  document.getElementById('hyTable').tBodies[0].innerHTML=[['Normal day',f(b)],['Active or physical shift',f(b+1)+' +*'],['Active and very hot',f(b+2)+' +*']].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
 }
 document.getElementById('hyKg').addEventListener('input',renderHy);renderHy();
 

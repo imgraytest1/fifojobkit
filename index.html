@@ -2587,8 +2587,8 @@ function renderSS(){
 }
 ['ssSal','ssAmt'].forEach(i=>$(i).addEventListener('input',renderSS));renderSS();
 function renderHy(){
-  const kg=Math.max(30,Math.min(250,+document.getElementById('hyKg').value||80)), b=kg/20, f=n=>n.toFixed(1)+' L';
-  document.getElementById('hyTable').tBodies[0].innerHTML=[['Normal day',f(b)],['Active or physical shift',f(b+1)+' +*'],['Active and very hot',f(b+2)+' +*']].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
+  const kg=Math.max(30,Math.min(250,+document.getElementById('hyKg').value||80)), b=kg/20, f=n=>Math.round(n)+' L';
+  document.getElementById('hyTable').tBodies[0].innerHTML=[['Normal day',f(b)],['Active or physical shift',Math.round(b+1)+'+ L*'],['Active and very hot',Math.round(b+2)+'+ L*']].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
 }
 document.getElementById('hyKg').addEventListener('input',renderHy);renderHy();
 

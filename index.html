@@ -1002,41 +1002,41 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       </ul>
     </div>
     <div class="panel">
-      <h3>💰 Salary sacrifice</h3>
-      <p class="small mutedt" style="margin:0">Ask your employer to pay part of your pay into super <b>before</b> tax. It is taxed 15% in your fund, not at your normal rate (30% or more for most FIFO workers). You take home less now and keep more overall.</p>
+      <h3 data-th="ss.h">💰 Salary sacrifice</h3>
+      <p class="small mutedt" style="margin:0" data-th="ss.p">Ask your employer to pay part of your pay into super <b>before</b> tax. It is taxed 15% in your fund, not at your normal rate (30% or more for most FIFO workers). You take home less now and keep more overall.</p>
       <div class="cgrid">
-        <label class="f" for="ssSal">Yearly pay before tax ($)<input id="ssSal" type="number" min="0" inputmode="numeric" value="150000"></label>
-        <label class="f" for="ssAmt">Sacrifice per year ($)<input id="ssAmt" type="number" min="0" inputmode="numeric" value="10000"></label>
+        <label class="f" for="ssSal"><span data-th="ss.sal">Yearly pay before tax ($)</span><input id="ssSal" type="number" min="0" inputmode="numeric" value="150000"></label>
+        <label class="f" for="ssAmt"><span data-th="ss.amt">Sacrifice per year ($)</span><input id="ssAmt" type="number" min="0" inputmode="numeric" value="10000"></label>
       </div>
       <div class="tbl"><table id="ssTable"><tbody></tbody></table></div>
       <p class="small mutedt" id="ssNote"></p>
       <ul class="notes small">
-        <li>Limit: <b>$32,500</b> a year in total (your employer's 12% plus your extra). Extra above that is taxed at your normal rate.</li>
-        <li>Unused limit from the last 5 years can carry forward if your super is under $500,000.</li>
-        <li>You cannot get it back until you retire. Not for working holiday visas, where super is taxed 65% when you leave.</li>
+        <li data-th="ss.l1">Limit: <b>$32,500</b> a year in total (your employer's 12% plus your extra). Extra above that is taxed at your normal rate.</li>
+        <li data-th="ss.l2">Unused limit from the last 5 years can carry forward if your super is under $500,000.</li>
+        <li data-th="ss.l3">You cannot get it back until you retire. Not for working holiday visas, where super is taxed 65% when you leave.</li>
       </ul>
-      <p class="small mutedt">Estimate for a tax resident, 2026-27 rates plus 2% Medicare. General information, not financial advice. Check with your employer or the <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/concessional-contributions" target="_blank" rel="noopener" style="color:var(--hivis)">ATO</a>.</p>
+      <p class="small mutedt" data-th="ss.n">Estimate for a tax resident, 2026-27 rates plus 2% Medicare. General information, not financial advice. Check with your employer or the <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/concessional-contributions" target="_blank" rel="noopener" style="color:var(--hivis)">ATO</a>.</p>
     </div>
     <div class="panel">
-      <h3>🏦 What is an SMSF?</h3>
-      <p class="small mutedt" style="margin:0">A self-managed super fund is a super fund you run yourself, with up to 6 members. You are the trustee, so you choose the investments.</p>
+      <h3 data-th="sm.h">🏦 What is an SMSF?</h3>
+      <p class="small mutedt" style="margin:0" data-th="sm.p">A self-managed super fund is a super fund you run yourself, with up to 6 members. You are the trustee, so you choose the investments.</p>
       <ul class="notes small">
-        <li><b>Control:</b> you pick the investments, such as shares, ETFs, cash or property.</li>
-        <li><b>Combine:</b> family members can pool their super in one fund.</li>
-        <li><b>Tax:</b> 15% on earnings while saving, and 0% once you are paying a retirement pension (rules apply).</li>
-        <li><b>Flexible:</b> you can plan when to buy, sell or take income.</li>
+        <li data-th="sm.l1"><b>Control:</b> you pick the investments, such as shares, ETFs, cash or property.</li>
+        <li data-th="sm.l2"><b>Combine:</b> family members can pool their super in one fund.</li>
+        <li data-th="sm.l3"><b>Tax:</b> 15% on earnings while saving, and 0% once you are paying a retirement pension (rules apply).</li>
+        <li data-th="sm.l4"><b>Flexible:</b> you can plan when to buy, sell or take income.</li>
       </ul>
-      <p class="small mutedt" style="margin:0"><b>Know the catch:</b> you are legally responsible, there are yearly audit and accounting costs, and there is no complaints scheme or compensation if things go wrong. It often suits larger balances. Get advice first.</p>
+      <p class="small mutedt" style="margin:0" data-th="sm.c"><b>Know the catch:</b> you are legally responsible, there are yearly audit and accounting costs, and there is no complaints scheme or compensation if things go wrong. It often suits larger balances. Get advice first.</p>
     </div>
     <div class="panel">
-      <h3>🇦🇺 Jahn Super: SMSF help in Perth</h3>
+      <h3 data-th="jh.h">🇦🇺 Jahn Super: SMSF help in Perth</h3>
       <ul class="notes small">
-        <li>WA accounting and tax firm that looks after SMSFs: set-up, admin, tax and compliance.</li>
-        <li>Offers a free SMSF quote and online booking.</li>
+        <li data-th="jh.1">WA accounting and tax firm that looks after SMSFs: set-up, admin, tax and compliance.</li>
+        <li data-th="jh.2">Offers a free SMSF quote and online booking.</li>
         <li>📞 <a href="tel:0864779964" style="color:var(--hivis)">08 6477 9964</a> · Osborne Park WA</li>
       </ul>
-      <a class="sbtn ghost" href="https://www.jahnsuper.com.au/" target="_blank" rel="noopener">Visit Jahn Super</a>
-      <p class="small mutedt">General information, not a recommendation. Compare fees and ask about experience before you choose any SMSF adviser.</p>
+      <a class="sbtn ghost" href="https://www.jahnsuper.com.au/" target="_blank" rel="noopener" data-th="jh.b">Visit Jahn Super</a>
+      <p class="small mutedt" data-th="jh.n">General information, not a recommendation. Compare fees and ask about experience before you choose any SMSF adviser.</p>
     </div>
   </div>
 
@@ -1250,7 +1250,7 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       <h3>😴 On swing</h3>
       <ul class="notes">
         <li><b>Sleep:</b> keep the same sleep times, use an eye mask and earplugs, and put your phone away at bedtime. Night shift? Sleep as soon as you get back to camp.</li>
-        <li><b>Air-con filter:</b> switch the unit off, slide out the filter and wash it with hot soapy water in the shower. Let it dry fully before you put it back. Cleaner air means better sleep. If it will not come out easily, ask camp housekeeping.</li>
+        <li data-th="w.air"><b>Air-con filter:</b> switch the unit off, slide out the filter and wash it with hot soapy water in the shower. Let it dry fully before you put it back. Cleaner air means better sleep. If it will not come out easily, ask camp housekeeping.</li>
         <li data-th="t.neck"><b>Neck pillow:</b> bring your own contoured neck pillow from Kmart or Spotlight. Camp pillows are often flat or lumpy. A half-size one is best if you can find it: it packs small for the flight and fits the bunk.</li>
         <li data-th="t.mag"><b>Magnesium:</b> some workers take a magnesium supplement in the evening to help with sleep and tight, cramping muscles. Food works too: nuts, seeds, leafy greens and wholegrains. Aim for at least 500 mg a day. Doses over 350 mg can loosen your bowels, and anyone with kidney problems should ask a doctor first.</li>
         <li data-th="t.hard"><b>Hard water:</b> a lot of WA water is hard, which is the white calcite scale you see on a kettle element. It is safe to drink. Some people take magnesium to keep their calcium and magnesium in balance. Early animal research on kidney stones is promising, but it is not proven in people yet.</li>
@@ -1460,14 +1460,14 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       <div style="display:flex;flex-wrap:wrap;gap:8px"><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/sauna+near+me" target="_blank" rel="noopener"><b>🔥 Sauna</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/thai+massage+near+me" target="_blank" rel="noopener"><b>💆 Thai massage</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/yoga+classes+near+me" target="_blank" rel="noopener"><b>🧘 Yoga</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/reformer+pilates+near+me" target="_blank" rel="noopener"><b>🤸 Pilates</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/leisure+centre+sauna+pool+near+me" target="_blank" rel="noopener"><b>🏊 Pool / rec centre</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/swimming+beach+near+me" target="_blank" rel="noopener"><b>🌊 Swim spot</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/golf+course+near+me" target="_blank" rel="noopener"><b>⛳ Golf</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/driving+range+near+me" target="_blank" rel="noopener"><b>🏌️ Driving range</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/ten+pin+bowling+near+me" target="_blank" rel="noopener"><b>🎳 Bowling / arcade</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/indoor+climbing+gym+near+me" target="_blank" rel="noopener"><b>🧗 Climbing gym</b></a><a class="sauLink" style="flex:1 1 44%;margin:0" href="https://www.google.com/maps/search/bush+walk+trail+near+me" target="_blank" rel="noopener"><b>🥾 Walks and parks</b></a></div>
     </div>
     <div class="panel">
-      <h3>🥥 Coconut oil routine <small>(15 min)</small></h3>
+      <h3 data-th="sa.h">🥥 Coconut oil routine <small>(15 min)</small></h3>
       <ol class="notes steps4">
-        <li>Rub coconut oil over your whole body, <b>except the soles of your feet</b>.</li>
-        <li>Wait about <b>10 minutes</b>. Keep oil off your clothes and any cloth surfaces.</li>
-        <li>Have a <b>hot shower</b> to wash off the oil and dirt.</li>
-        <li>Dry off with a towel and pat away extra oil.</li>
+        <li data-th="sa.1">Rub coconut oil over your whole body, <b>except the soles of your feet</b>.</li>
+        <li data-th="sa.2">Wait about <b>10 minutes</b>. Keep oil off your clothes and any cloth surfaces.</li>
+        <li data-th="sa.3">Have a <b>hot shower</b> to wash off the oil and dirt.</li>
+        <li data-th="sa.4">Dry off with a towel and pat away extra oil.</li>
       </ol>
-      <a class="sbtn ghost" href="#skin">Full coconut oil routine</a>
+      <a class="sbtn ghost" href="#skin" data-th="sa.b">Full coconut oil routine</a>
     </div>
     <div class="panel">
       <h3>📍 Saunas nearest to you <small>(10 sec)</small></h3>
@@ -1633,7 +1633,7 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   <div class="view tview" id="v-tjobs" hidden><div class="vhead"><h2 class="big2 th1">🔎 Find work & get ready</h2><p class="lede tp1">Search, apply and track jobs. Get your tickets, resume and interview sorted.</p></div><div id="tJobsBody"></div></div>
   <div class="view tview" id="v-tmoney" hidden><div class="vhead"><h2 class="big2 th2">💰 Money</h2><p class="lede tp2">See what a swing pays you, in your own currency. Check your payslip, tax and super.</p></div><div id="tMoneyBody"></div><section class="panel" id="revolutBox"><h3>💳 A money app for your swing pay <small>(20 sec)</small></h3><p class="small" style="margin:0 0 8px">Revolut is a money app many travellers use to spend and send money. Rewards and who qualifies are set by Revolut.</p><a class="btn primary" href="https://revolut.com/referral/?referral-code=gray4781h!NOV1-26-AR-AU-SAV-CTRL-H2&amp;geo-redirect" target="_blank" rel="noopener sponsored" style="display:block;text-align:center;text-decoration:none">Open a Revolut account</a><p class="small" style="margin:8px 0 0">Referral link: if you open an account, Gray (Awesome Alchemy) may get a reward. It costs you nothing. Compare other options too. Never share your TFN, licence or bank numbers with anyone through this kit.</p></section><section class="panel moneyp" id="wiseBox"><h3>🌏 Sending money home?</h3><p class="small" style="margin:0 0 8px">Wise is usually cheaper than a bank for sending money overseas. Rewards and who qualifies are set by Wise.</p><div class="row" data-money="wise"></div></section></div>
   <div class="view tview" id="v-tgoals" hidden><div class="vhead"><h2 class="big2 th3">✨ My goals</h2><p class="lede tp3">Set your savings goal, tick off each swing and celebrate every win.</p></div><div class="mh tgoal" id="tGoalsBody"></div><div id="tGoalsMore"></div></div>
-  <div class="view tview" id="v-twell" hidden><div class="vhead"><h2 class="big2 th4">🌿 Wellbeing</h2><p class="lede tp4">Feel good, sleep well and stay positive while you earn.</p></div><div id="tWellBody"></div><nav class="wnav" aria-label="More wellbeing help"><a href="#hydrate"><span class="wi" aria-hidden="true">💧</span><span><b>Hydration and electrolytes</b><span class="d">How much to drink on shift, and mineral drinks with magnesium and potassium.</span></span></a><a href="#skin"><span class="wi" aria-hidden="true">🥥</span><span><b>Coconut oil skin routine</b><span class="d">Look after your skin before your shower, with oil in your nostrils to catch dust.</span></span></a><a href="#skin"><span class="wi" aria-hidden="true">🧴</span><span><b>Zinc sunscreen information</b><span class="d">Buy from a health food store. Zinc oxide as a main ingredient, with options.</span></span></a><a href="#breath"><span class="wi" aria-hidden="true">🍺</span><span><b>Morning breath test</b><span class="d">What to expect at the alcohol test, and how to plan if you drink.</span></span></a></nav><div id="tWellMore"></div><nav class="wnav" aria-label="Free help lines"><a href="#wellbeing"><span><b class="tl4">🆘 Free help lines: call or text now</b><span class="d">Free, private support 24/7 from Lifeline, MATES, Beyond Blue and more. Plus simple habits for sleep and mood.</span></span></a></nav></div>
+  <div class="view tview" id="v-twell" hidden><div class="vhead"><h2 class="big2 th4">🌿 Wellbeing</h2><p class="lede tp4">Feel good, sleep well and stay positive while you earn.</p></div><div id="tWellBody"></div><nav class="wnav" aria-label="More wellbeing help"><a href="#hydrate"><span class="wi" aria-hidden="true">💧</span><span><b>Hydration and electrolytes</b><span class="d">How much to drink on shift, and mineral drinks with magnesium and potassium.</span></span></a><a href="#skin"><span class="wi" aria-hidden="true">🥥</span><span><b>Coconut oil skin routine</b><span class="d" data-th="w.sd">Look after your skin before your shower, with oil in your nostrils to catch dust.</span></span></a><a href="#skin"><span class="wi" aria-hidden="true">🧴</span><span><b data-th="w.zt">Zinc sunscreen information</b><span class="d" data-th="w.zd">Buy from a health food store. Zinc oxide as a main ingredient, with options.</span></span></a><a href="#breath"><span class="wi" aria-hidden="true">🍺</span><span><b>Morning breath test</b><span class="d">What to expect at the alcohol test, and how to plan if you drink.</span></span></a></nav><div id="tWellMore"></div><nav class="wnav" aria-label="Free help lines"><a href="#wellbeing"><span><b class="tl4">🆘 Free help lines: call or text now</b><span class="d">Free, private support 24/7 from Lifeline, MATES, Beyond Blue and more. Plus simple habits for sleep and mood.</span></span></a></nav></div>
   <div class="view" id="v-medical" hidden>
     <div class="vhead"><h2 class="big2">🩺 Medical test prep</h2><p class="lede">Most FIFO and mining jobs need a pre-employment medical before you start. Here is what usually happens. Tests differ by job and employer, so check your offer letter or ask the clinic.</p></div>
     <div class="panel">
@@ -1698,35 +1698,35 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   <div class="view" id="v-skin" hidden>
     <div class="vhead"><h2 class="big2">🥥 Coconut oil morning routine</h2><p class="lede">Oleation means rubbing a little oil over your skin before you shower. It leaves skin soft and helps it hold moisture in hot, dry and dusty work.</p></div>
     <div class="panel">
-      <h3>🥥 Minimal sunscreen protection, maximum skin protection</h3>
-      <p class="small" style="margin:0">Oil keeps skin soft and moisturised through hot, dry, dusty work. Use it before your shower, then put zinc sunscreen on dry skin.</p>
+      <h3 data-th="k.head">🥥 Minimal sunscreen protection, maximum skin protection</h3>
+      <p class="small" style="margin:0" data-th="k.intro">Oil keeps skin soft and moisturised through hot, dry, dusty work. Use it before your shower, then put zinc sunscreen on dry skin.</p>
     </div>
     <div class="panel">
-      <h3>☀️ The best way, step by step <span class="tpill">15 min</span></h3>
+      <h3 data-th="k.steph">☀️ The best way, step by step <span class="tpill">15 min</span></h3>
       <ol class="stepn">
-        <li><span><b>Warm it.</b> Scoop about 1 tablespoon of virgin (cold-pressed) coconut oil into your hands. It melts on contact with warm skin.</span></li>
-        <li><span><b>Oil up everywhere except the soles of your feet.</b> Use long strokes on arms and legs and small circles on joints. Do 3 to 5 minutes, head to toe. A thin layer is enough.</span></li>
-        <li><span><b>Nose too.</b> Dab a tiny amount just inside each nostril with a clean finger. It catches dust before it gets in. Wipe it out with a tissue when you finish work.</span></li>
-        <li><span><b>Wait about 10 minutes</b> so it soaks in. Keep the oil off your clothes, sheets, towels and chairs. Sit on a towel you do not mind and wear nothing you want to keep clean.</span></li>
-        <li><span><b>Have a hot shower.</b> The heat and soap wash off the oil, dust and dirt. Use soap where you need it, such as underarms, groin and feet.</span></li>
-        <li><span><b>Dry off, then zinc sunscreen.</b> Dry off well with a towel, pat off any extra oil, then put on a zinc-based (mineral) sunscreen, SPF 50+ and water-resistant, about 20 minutes before going outside. Reapply every 2 hours and after sweating. Add a hat, long sleeves and sunglasses.</span></li>
+        <li><span data-th="k.s1"><b>Warm it.</b> Scoop about 1 tablespoon of virgin (cold-pressed) coconut oil into your hands. It melts on contact with warm skin.</span></li>
+        <li><span data-th="k.s2"><b>Oil up everywhere except the soles of your feet.</b> Use long strokes on arms and legs and small circles on joints. Do 3 to 5 minutes, head to toe. A thin layer is enough.</span></li>
+        <li><span data-th="k.s3"><b>Nose too.</b> Dab a tiny amount just inside each nostril with a clean finger. It catches dust before it gets in. Wipe it out with a tissue when you finish work.</span></li>
+        <li><span data-th="k.s4"><b>Wait about 10 minutes</b> so it soaks in. Keep the oil off your clothes, sheets, towels and chairs. Sit on a towel you do not mind and wear nothing you want to keep clean.</span></li>
+        <li><span data-th="k.s5"><b>Have a hot shower.</b> The heat and soap wash off the oil, dust and dirt. Use soap where you need it, such as underarms, groin and feet.</span></li>
+        <li><span data-th="k.s6"><b>Dry off, then zinc sunscreen.</b> Dry off well with a towel, pat off any extra oil, then put on a zinc-based (mineral) sunscreen, SPF 50+ and water-resistant, about 20 minutes before going outside. Reapply every 2 hours and after sweating. Add a hat, long sleeves and sunglasses.</span></li>
       </ol>
     </div>
     <div class="panel">
-      <h3>🧽 Exfoliate first <span class="tpill">3 min</span></h3>
-      <p class="small" style="margin:0">Scrub your skin in the shower before you oil up, and before the sauna. It lifts off dust, sweat, dead skin and old sunscreen, so oil and sauna heat reach clean, fresh skin.</p>
+      <h3 data-th="x.h">🧽 Exfoliate first <span class="tpill">3 min</span></h3>
+      <p class="small" style="margin:0" data-th="x.p">Scrub your skin in the shower before you oil up, and before the sauna. It lifts off dust, sweat, dead skin and old sunscreen, so oil and sauna heat reach clean, fresh skin.</p>
       <ul class="mlist">
-        <li><b>Benefits:</b> smoother, softer skin, fewer dry patches, less dust and grime stuck in the skin, and it removes fake tan.</li>
-        <li><b>Before the sauna:</b> scrub first, rinse, then sauna. Clean skin sweats freely.</li>
-        <li><b>Lymph flow:</b> rub in long strokes towards your heart, from hands and feet up your arms and legs. Gentle massage like this helps move lymph fluid and feels great after a long shift. Your liver and kidneys do the real detoxing, so drink water.</li>
-        <li><b>Go gentle:</b> light pressure is enough. Skip sunburnt, cut or irritated skin, and do it 2 to 3 times a week.</li>
+        <li data-th="x.l1"><b>Benefits:</b> smoother, softer skin, fewer dry patches, less dust and grime stuck in the skin, and it removes fake tan.</li>
+        <li data-th="x.l2"><b>Before the sauna:</b> scrub first, rinse, then sauna. Clean skin sweats freely.</li>
+        <li data-th="x.l3"><b>Lymph flow:</b> rub in long strokes towards your heart, from hands and feet up your arms and legs. Gentle massage like this helps move lymph fluid and feels great after a long shift. Your liver and kidneys do the real detoxing, so drink water.</li>
+        <li data-th="x.l4"><b>Go gentle:</b> light pressure is enough. Skip sunburnt, cut or irritated skin, and do it 2 to 3 times a week.</li>
       </ul>
-      <p><b>The Balnea Body Company Exfoliating Towel</b> (Woolworths, about $6)<br>A stretchy mesh towel you use wet in the shower. <a href="https://www.woolworths.com.au/shop/productdetails/876485/the-balnea-body-company-exfoliating-towel" target="_blank" rel="noopener">See Woolworths listing</a></p>
-      <p class="small mutedt">Prices change, so check the listing. General information, not medical advice.</p>
+      <p data-th="x.t"><b>The Balnea Body Company Exfoliating Towel</b> (Woolworths, about $6)<br>A stretchy mesh towel you use wet in the shower. <a href="https://www.woolworths.com.au/shop/productdetails/876485/the-balnea-body-company-exfoliating-towel" target="_blank" rel="noopener">See Woolworths listing</a></p>
+      <p class="small mutedt" data-th="x.n">Prices change, so check the listing. General information, not medical advice.</p>
     </div>
     <div class="panel">
       <h3>🧴 Zinc-based sunscreen options</h3>
-      <p><b>Buy it from a health food store.</b> Zinc oxide should be one of the main ingredients. It is a natural mineral that sits on top of your skin and blocks UV. Pick SPF 50+ and read the full ingredient list on the label.</p>
+      <p data-th="k.zint"><b>Buy it from a health food store.</b> Zinc oxide should be one of the main ingredients. It is a natural mineral that sits on top of your skin and blocks UV. Pick SPF 50+ and read the full ingredient list on the label.</p>
       <p><b>WotNot Natural Sunscreen SPF 50+</b> (125 g)<br>Zinc oxide 22.7%. The rest is mostly plant oils and waxes (coconut oil, castor oil, candelilla wax, linseed oil, vitamin E). About A$28 at one Australian shop (RRP A$32.95). The page I checked did not say if it is non-nano or water resistant, so check the label. <a href="https://www.aussiehealthproducts.com.au/wotnot-naturals-natural-sunscreen-spf-50-125g.php" target="_blank" rel="noopener">See listing</a></p>
       <p><b>WotNot Natural Zinc Sunscreen Stick SPF 50</b> (45 g)<br>Handy for nose, ears and cheeks on site. Check the label for the full ingredients. <a href="https://www.organicsonabudget.com.au/products/wotnot-natural-zinc-sunscreen-stick-spf-50-45g" target="_blank" rel="noopener">See listing</a></p>
       <p><b>Invisible Zinc Face + Body SPF 50</b><br>Zinc oxide is the only active, and it rubs in clear. It has a longer ingredient list that includes silicones and preservatives, so it is not all-natural. <a href="https://skinsort.com/products/invisible-zinc/face-body-mineral-sunscreen-spf-50" target="_blank" rel="noopener">See ingredients</a></p>
@@ -1802,11 +1802,11 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
       <p class="warnp">Stop work, get to shade, cool down and tell your supervisor if you get a bad headache, dizziness, nausea, cramps or stop sweating. Call <a href="tel:000">000</a> if someone is confused, collapses or has hot, dry skin.</p>
     </div>
     <div class="panel">
-      <h3>🪣 How much to drink a day <span class="tpill">10 sec</span></h3>
-      <p class="small" style="margin:0">Rough guide: <b>1 litre a day for every 20 kg</b> of body weight. Drink more if you are physically active, and more again in very hot weather.</p>
-      <div class="cgrid"><label class="f" for="hyKg">Your weight (kg)<input id="hyKg" type="number" min="30" max="250" inputmode="numeric" value="80"></label></div>
+      <h3 data-th="hy.h">🪣 How much to drink a day <span class="tpill">10 sec</span></h3>
+      <p class="small" style="margin:0" data-th="hy.p">Rough guide: <b>1 litre a day for every 20 kg</b> of body weight. Drink more if you are physically active, and more again in very hot weather.</p>
+      <div class="cgrid"><label class="f" for="hyKg"><span data-th="hy.kg">Your weight (kg)</span><input id="hyKg" type="number" min="30" max="250" inputmode="numeric" value="80"></label></div>
       <div class="tbl"><table id="hyTable"><tbody></tbody></table></div>
-      <p class="small mutedt">* Plus more again for extra heat or tougher conditions. Spread it through the day, a cup at a time. Add salt or an electrolyte drink when you sweat a lot. Rough guide only.</p>
+      <p class="small mutedt" data-th="hy.n">* Plus more again for extra heat or tougher conditions. Spread it through the day, a cup at a time. Add salt or an electrolyte drink when you sweat a lot. Rough guide only.</p>
     </div>
     <div class="panel">
       <h3>🧂 Electrolyte drink options</h3>
@@ -2573,24 +2573,24 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-sup]'); if
 function renderSS(){
   const sal=Math.max(0,+$('ssSal').value||0), amt=Math.max(0,Math.min(sal,+$('ssAmt').value||0));
   const tax=t=>{const b=[[18200,0],[45000,.15],[135000,.30],[190000,.37],[Infinity,.45]];let r=0,p=0;for(const [u,rt] of b){if(t>p)r+=(Math.min(t,u)-p)*rt;p=u;}return r+t*.02;};
-  const fmt=n=>'$'+Math.round(n).toLocaleString('en-AU');
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-AU'), T=(k,d,o)=>{let r=window.fifoTr?fifoTr(k,o):d;if(!window.fifoTr&&o)for(const a in o)r=r.replace('{'+a+'}',o[a]);return r};
   const saved=tax(sal)-tax(sal-amt), fundTax=amt*.15, net=saved-fundTax;
   const sg=sal*.12, over=Math.max(0,sg+amt-32500);
   $('ssTable').tBodies[0].innerHTML=[
-    ['Income tax you save',fmt(saved)],
-    ['Tax your fund takes (15%)','-'+fmt(fundTax)],
-    ['Extra tax saved overall','<b>'+fmt(net)+'</b>'],
-    ['Goes into your super','<b>'+fmt(amt-fundTax)+'</b>'],
-    ['Take-home pay drops by',fmt(amt-saved)]
+    [T('ss.r1','Income tax you save'),fmt(saved)],
+    [T('ss.r2','Tax your fund takes (15%)'),'-'+fmt(fundTax)],
+    [T('ss.r3','Extra tax saved overall'),'<b>'+fmt(net)+'</b>'],
+    [T('ss.r4','Goes into your super'),'<b>'+fmt(amt-fundTax)+'</b>'],
+    [T('ss.r5','Take-home pay drops by'),fmt(amt-saved)]
   ].map((r,i)=>'<tr'+(i===2?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
-  $('ssNote').textContent=over>0?'Over the $32,500 limit by about '+fmt(over)+' (your employer pays about '+fmt(sg)+'). Extra above the limit is taxed at your normal rate, so lower the amount.':'Your employer pays about '+fmt(sg)+', so you have about '+fmt(32500-sg-amt)+' of limit left.';
+  $('ssNote').textContent=over>0?T('ss.over','Over the $32,500 limit by about {a} (your employer pays about {b}). Extra above the limit is taxed at your normal rate, so lower the amount.',{a:fmt(over),b:fmt(sg)}):T('ss.ok','Your employer pays about {b}, so you have about {a} of limit left.',{a:fmt(32500-sg-amt),b:fmt(sg)});
 }
-['ssSal','ssAmt'].forEach(i=>$(i).addEventListener('input',renderSS));renderSS();
+window.renderSS=renderSS;['ssSal','ssAmt'].forEach(i=>$(i).addEventListener('input',renderSS));renderSS();
 function renderHy(){
-  const kg=Math.max(30,Math.min(250,+document.getElementById('hyKg').value||80)), b=kg/20, f=n=>Math.round(n)+' L';
-  document.getElementById('hyTable').tBodies[0].innerHTML=[['Normal day',f(b)],['Active or physical shift',Math.round(b+1)+'+ L*'],['Active and very hot',Math.round(b+2)+'+ L*']].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
+  const T=(k,d,o)=>{let r=window.fifoTr?fifoTr(k,o):d;if(!window.fifoTr&&o)for(const a in o)r=r.replace('{'+a+'}',o[a]);return r}, kg=Math.max(30,Math.min(250,+document.getElementById('hyKg').value||80)), b=kg/20;
+  document.getElementById('hyTable').tBodies[0].innerHTML=[[T('hy.r1','Normal day'),T('hy.u','{n} L',{n:Math.round(b)})],[T('hy.r2','Active or physical shift'),T('hy.up','{n}+ L*',{n:Math.round(b+1)})],[T('hy.r3','Active and very hot'),T('hy.up','{n}+ L*',{n:Math.round(b+2)})]].map((r,i)=>'<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
 }
-document.getElementById('hyKg').addEventListener('input',renderHy);renderHy();
+window.renderHy=renderHy;document.getElementById('hyKg').addEventListener('input',renderHy);renderHy();
 
 
 
@@ -4433,7 +4433,71 @@ var EN={
 'c.btn':'📅 Add all my dates to my phone calendar','c.done':'Calendar file ready. Open it to add your dates.','c.none':'No dates yet. Add your swing dates first.',
 'u.del':'Deleted','u.undo':'Undo','e.first':'Add your first one','x.hide':'Hide this section','x.show':'Show this section',
 'f.tickets':'Tickets','f.exp':'Expiry date','f.sendn':'📤 Send {n} ticked','f.mail':'✉️ Email my ticket list','f.expired':'Expired {d}','f.expires':'Expires {d}','f.noexp':'No expiry date','f.tkh':'Tick the tickets a recruiter asked for, then tap Send. Your email app opens with the files attached.','f.nosend':'This phone cannot attach files from here. Open each ticket and use Share, or use Email my ticket list.',
-'d.saved':'✓ Saved','d.next':'Next: {h}','d.save':'Save','d.alldone':'🎉 All done for today'
+'d.saved':'✓ Saved','d.next':'Next: {h}','d.save':'Save','d.alldone':'🎉 All done for today',
+'w.air':'<b>Air-con filter:</b> switch the unit off, slide out the filter and wash it with hot soapy water in the shower. Let it dry fully before you put it back. Cleaner air means better sleep. If it will not come out easily, ask camp housekeeping.',
+'w.zt':'Zinc sunscreen information',
+'w.zd':'Buy from a health food store. Zinc oxide as a main ingredient, with options.',
+'w.sd':'Look after your skin before your shower, with oil in your nostrils to catch dust.',
+'k.head':'🥥 Minimal sunscreen protection, maximum skin protection',
+'k.intro':'Oil keeps skin soft and moisturised through hot, dry, dusty work. Use it before your shower, then put zinc sunscreen on dry skin.',
+'k.steph':'☀️ The best way, step by step <span class="tpill">15 min</span>',
+'k.s1':'<b>Warm it.</b> Scoop about 1 tablespoon of virgin (cold-pressed) coconut oil into your hands. It melts on contact with warm skin.',
+'k.s2':'<b>Oil up everywhere except the soles of your feet.</b> Use long strokes on arms and legs and small circles on joints. Do 3 to 5 minutes, head to toe. A thin layer is enough.',
+'k.s3':'<b>Nose too.</b> Dab a tiny amount just inside each nostril with a clean finger. It catches dust before it gets in. Wipe it out with a tissue when you finish work.',
+'k.s4':'<b>Wait about 10 minutes</b> so it soaks in. Keep the oil off your clothes, sheets, towels and chairs. Sit on a towel you do not mind and wear nothing you want to keep clean.',
+'k.s5':'<b>Have a hot shower.</b> The heat and soap wash off the oil, dust and dirt. Use soap where you need it, such as underarms, groin and feet.',
+'k.s6':'<b>Dry off, then zinc sunscreen.</b> Dry off well with a towel, pat off any extra oil, then put on a zinc-based (mineral) sunscreen, SPF 50+ and water-resistant, about 20 minutes before going outside. Reapply every 2 hours and after sweating. Add a hat, long sleeves and sunglasses.',
+'x.h':'🧽 Exfoliate first <span class="tpill">3 min</span>',
+'x.p':'Scrub your skin in the shower before you oil up, and before the sauna. It lifts off dust, sweat, dead skin and old sunscreen, so oil and sauna heat reach clean, fresh skin.',
+'x.l1':'<b>Benefits:</b> smoother, softer skin, fewer dry patches, less dust and grime stuck in the skin, and it removes fake tan.',
+'x.l2':'<b>Before the sauna:</b> scrub first, rinse, then sauna. Clean skin sweats freely.',
+'x.l3':'<b>Lymph flow:</b> rub in long strokes towards your heart, from hands and feet up your arms and legs. Gentle massage like this helps move lymph fluid and feels great after a long shift. Your liver and kidneys do the real detoxing, so drink water.',
+'x.l4':'<b>Go gentle:</b> light pressure is enough. Skip sunburnt, cut or irritated skin, and do it 2 to 3 times a week.',
+'x.t':'<b>The Balnea Body Company Exfoliating Towel</b> (Woolworths, about $6)<br>A stretchy mesh towel you use wet in the shower. <a href="https://www.woolworths.com.au/shop/productdetails/876485/the-balnea-body-company-exfoliating-towel" target="_blank" rel="noopener">See Woolworths listing</a>',
+'x.n':'Prices change, so check the listing. General information, not medical advice.',
+'k.zint':'<b>Buy it from a health food store.</b> Zinc oxide should be one of the main ingredients. It is a natural mineral that sits on top of your skin and blocks UV. Pick SPF 50+ and read the full ingredient list on the label.',
+'sa.h':'🥥 Coconut oil routine <small>(15 min)</small>',
+'sa.1':'Rub coconut oil over your whole body, <b>except the soles of your feet</b>.',
+'sa.2':'Wait about <b>10 minutes</b>. Keep oil off your clothes and any cloth surfaces.',
+'sa.3':'Have a <b>hot shower</b> to wash off the oil and dirt.',
+'sa.4':'Dry off with a towel and pat away extra oil.',
+'sa.b':'Full coconut oil routine',
+'hy.h':'🪣 How much to drink a day <span class="tpill">10 sec</span>',
+'hy.p':'Rough guide: <b>1 litre a day for every 20 kg</b> of body weight. Drink more if you are physically active, and more again in very hot weather.',
+'hy.n':'* Plus more again for extra heat or tougher conditions. Spread it through the day, a cup at a time. Add salt or an electrolyte drink when you sweat a lot. Rough guide only.',
+'ss.h':'💰 Salary sacrifice',
+'ss.p':'Ask your employer to pay part of your pay into super <b>before</b> tax. It is taxed 15% in your fund, not at your normal rate (30% or more for most FIFO workers). You take home less now and keep more overall.',
+'ss.l1':'Limit: <b>$32,500</b> a year in total (your employer\'s 12% plus your extra). Extra above that is taxed at your normal rate.',
+'ss.l2':'Unused limit from the last 5 years can carry forward if your super is under $500,000.',
+'ss.l3':'You cannot get it back until you retire. Not for working holiday visas, where super is taxed 65% when you leave.',
+'ss.n':'Estimate for a tax resident, 2026-27 rates plus 2% Medicare. General information, not financial advice. Check with your employer or the <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/concessional-contributions" target="_blank" rel="noopener" style="color:var(--hivis)">ATO</a>.',
+'sm.h':'🏦 What is an SMSF?',
+'sm.p':'A self-managed super fund is a super fund you run yourself, with up to 6 members. You are the trustee, so you choose the investments.',
+'sm.l1':'<b>Control:</b> you pick the investments, such as shares, ETFs, cash or property.',
+'sm.l2':'<b>Combine:</b> family members can pool their super in one fund.',
+'sm.l3':'<b>Tax:</b> 15% on earnings while saving, and 0% once you are paying a retirement pension (rules apply).',
+'sm.l4':'<b>Flexible:</b> you can plan when to buy, sell or take income.',
+'sm.c':'<b>Know the catch:</b> you are legally responsible, there are yearly audit and accounting costs, and there is no complaints scheme or compensation if things go wrong. It often suits larger balances. Get advice first.',
+'jh.h':'🇦🇺 Jahn Super: SMSF help in Perth',
+'jh.1':'WA accounting and tax firm that looks after SMSFs: set-up, admin, tax and compliance.',
+'jh.2':'Offers a free SMSF quote and online booking.',
+'jh.b':'Visit Jahn Super',
+'jh.n':'General information, not a recommendation. Compare fees and ask about experience before you choose any SMSF adviser.',
+'hy.kg':'Your weight (kg)',
+'ss.sal':'Yearly pay before tax ($)',
+'ss.amt':'Sacrifice per year ($)',
+'hy.r1':'Normal day',
+'hy.r2':'Active or physical shift',
+'hy.r3':'Active and very hot',
+'hy.u':'{n} L',
+'hy.up':'{n}+ L*',
+'ss.r1':'Income tax you save',
+'ss.r2':'Tax your fund takes (15%)',
+'ss.r3':'Extra tax saved overall',
+'ss.r4':'Goes into your super',
+'ss.r5':'Take-home pay drops by',
+'ss.over':'Over the $32,500 limit by about {a} (your employer pays about {b}). Extra above the limit is taxed at your normal rate, so lower the amount.',
+'ss.ok':'Your employer pays about {b}, so you have about {a} of limit left.'
 };
 var KEYS=Object.keys(EN);
 function lang(){try{return localStorage.getItem('fifokit_lang')||'en'}catch(e){return'en'}}
@@ -4662,4 +4726,5 @@ Object.keys(N).forEach(function(k){var v=document.getElementById('v-'+k);if(!v)r
  a.style.cssText='display:block;text-align:center;text-decoration:none;margin:16px 0';v.appendChild(a);});
 }catch(e){}})();
 </script>
+<script>(function(){var h=window.fifoLangHook;window.fifoLangHook=function(){h&&h();window.renderHy&&renderHy();window.renderSS&&renderSS()};window.renderHy&&renderHy();window.renderSS&&renderSS()})();</script>
 </body></html>

@@ -1001,6 +1001,43 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
         <li>Working holiday? Tap <b>1-year visa</b> above for low-fee funds, and see <a href="#whm" style="color:var(--hivis)">Working holiday year</a>.</li>
       </ul>
     </div>
+    <div class="panel">
+      <h3>💰 Salary sacrifice</h3>
+      <p class="small mutedt" style="margin:0">Ask your employer to pay part of your pay into super <b>before</b> tax. It is taxed 15% in your fund, not at your normal rate (30% or more for most FIFO workers). You take home less now and keep more overall.</p>
+      <div class="cgrid">
+        <label class="f" for="ssSal">Yearly pay before tax ($)<input id="ssSal" type="number" min="0" inputmode="numeric" value="150000"></label>
+        <label class="f" for="ssAmt">Sacrifice per year ($)<input id="ssAmt" type="number" min="0" inputmode="numeric" value="10000"></label>
+      </div>
+      <div class="tbl"><table id="ssTable"><tbody></tbody></table></div>
+      <p class="small mutedt" id="ssNote"></p>
+      <ul class="notes small">
+        <li>Limit: <b>$32,500</b> a year in total (your employer's 12% plus your extra). Extra above that is taxed at your normal rate.</li>
+        <li>Unused limit from the last 5 years can carry forward if your super is under $500,000.</li>
+        <li>You cannot get it back until you retire. Not for working holiday visas, where super is taxed 65% when you leave.</li>
+      </ul>
+      <p class="small mutedt">Estimate for a tax resident, 2026-27 rates plus 2% Medicare. General information, not financial advice. Check with your employer or the <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/concessional-contributions" target="_blank" rel="noopener" style="color:var(--hivis)">ATO</a>.</p>
+    </div>
+    <div class="panel">
+      <h3>🏦 What is an SMSF?</h3>
+      <p class="small mutedt" style="margin:0">A self-managed super fund is a super fund you run yourself, with up to 6 members. You are the trustee, so you choose the investments.</p>
+      <ul class="notes small">
+        <li><b>Control:</b> you pick the investments, such as shares, ETFs, cash or property.</li>
+        <li><b>Combine:</b> family members can pool their super in one fund.</li>
+        <li><b>Tax:</b> 15% on earnings while saving, and 0% once you are paying a retirement pension (rules apply).</li>
+        <li><b>Flexible:</b> you can plan when to buy, sell or take income.</li>
+      </ul>
+      <p class="small mutedt" style="margin:0"><b>Know the catch:</b> you are legally responsible, there are yearly audit and accounting costs, and there is no complaints scheme or compensation if things go wrong. It often suits larger balances. Get advice first.</p>
+    </div>
+    <div class="panel">
+      <h3>🇦🇺 Jahn Super: SMSF help in Perth</h3>
+      <ul class="notes small">
+        <li>WA accounting and tax firm that looks after SMSFs: set-up, admin, tax and compliance.</li>
+        <li>Offers a free SMSF quote and online booking.</li>
+        <li>📞 <a href="tel:0864779964" style="color:var(--hivis)">08 6477 9964</a> · Osborne Park WA</li>
+      </ul>
+      <a class="sbtn ghost" href="https://www.jahnsuper.com.au/" target="_blank" rel="noopener">Visit Jahn Super</a>
+      <p class="small mutedt">General information, not a recommendation. Compare fees and ask about experience before you choose any SMSF adviser.</p>
+    </div>
   </div>
 
   <!-- WORKING HOLIDAY -->
@@ -1209,25 +1246,6 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   <!-- WELLBEING -->
   <div class="view" id="v-wellbeing" hidden>
     <div class="vhead"><h2 class="big2">Wellbeing on swing</h2><p class="lede">FIFO life is hard on sleep, mood and family. These are free, private help lines and simple habits that help.</p></div>
-    <div class="panel sos">
-      <h3>🆘 Need help now?</h3>
-      <div class="calls">
-        <a class="call red" href="tel:000"><b>Emergency: 000</b><span>Danger to life. Police, fire, ambulance</span></a>
-        <a class="call" href="tel:131114"><b>Lifeline · 13 11 14</b><span>24/7 crisis support. Text 0477 13 11 14</span></a>
-        <a class="call" href="tel:1300642111"><b>MATES · 1300 642 111</b><span>24/7, for construction, mining and energy workers and families</span></a>
-      </div>
-    </div>
-    <div class="panel">
-      <h3>📞 More free help lines</h3>
-      <div class="calls">
-        <a class="call" href="tel:1300224636"><b>Beyond Blue · 1300 22 4636</b><span>Stress, worry, low mood. 24/7</span></a>
-        <a class="call" href="tel:1300659467"><b>Suicide Call Back Service · 1300 659 467</b><span>24/7, also for people worried about someone</span></a>
-        <a class="call" href="tel:1800737732"><b>1800RESPECT · 1800 737 732</b><span>Sexual assault, family or domestic violence. 24/7</span></a>
-        <a class="call" href="tel:139276"><b>13YARN · 13 92 76</b><span>Aboriginal and Torres Strait Islander crisis support</span></a>
-        <a class="call" href="tel:1800184527"><b>QLife · 1800 184 527</b><span>LGBTIQ+ peer support</span></a>
-      </div>
-      <p class="small mutedt">Most big employers also have an <b>EAP (Employee Assistance Program)</b>: free, private counselling, often for your family too. Ask HR or check the camp noticeboard.</p>
-    </div>
     <div class="panel">
       <h3>😴 On swing</h3>
       <ul class="notes">
@@ -1273,6 +1291,25 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
     <div class="row" data-money="revolut"></div>
     <p class="small mutedt" style="margin:0">General information, not financial advice.</p>
   </div>
+    <div class="panel sos">
+      <h3>🆘 Need help now?</h3>
+      <div class="calls">
+        <a class="call red" href="tel:000"><b>Emergency: 000</b><span>Danger to life. Police, fire, ambulance</span></a>
+        <a class="call" href="tel:131114"><b>Lifeline · 13 11 14</b><span>24/7 crisis support. Text 0477 13 11 14</span></a>
+        <a class="call" href="tel:1300642111"><b>MATES · 1300 642 111</b><span>24/7, for construction, mining and energy workers and families</span></a>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>📞 More free help lines</h3>
+      <div class="calls">
+        <a class="call" href="tel:1300224636"><b>Beyond Blue · 1300 22 4636</b><span>Stress, worry, low mood. 24/7</span></a>
+        <a class="call" href="tel:1300659467"><b>Suicide Call Back Service · 1300 659 467</b><span>24/7, also for people worried about someone</span></a>
+        <a class="call" href="tel:1800737732"><b>1800RESPECT · 1800 737 732</b><span>Sexual assault, family or domestic violence. 24/7</span></a>
+        <a class="call" href="tel:139276"><b>13YARN · 13 92 76</b><span>Aboriginal and Torres Strait Islander crisis support</span></a>
+        <a class="call" href="tel:1800184527"><b>QLife · 1800 184 527</b><span>LGBTIQ+ peer support</span></a>
+      </div>
+      <p class="small mutedt">Most big employers also have an <b>EAP (Employee Assistance Program)</b>: free, private counselling, often for your family too. Ask HR or check the camp noticeboard.</p>
+    </div>
   </div>
 
   <!-- SWING PLANNER -->
@@ -2503,6 +2540,23 @@ function renderSuper(){
 $('sup10').addEventListener('click',()=>{supMode='10';renderSuper();}); $('sup1').addEventListener('click',()=>{supMode='1';renderSuper();}); $('supW').addEventListener('click',()=>{supMode='W';renderSuper();});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-sup]'); if(a){supMode=a.dataset.sup; renderSuper();}});
 ['sBal','sAdd','sYrs'].forEach(i=>$(i).addEventListener('input',renderSuper));
+function renderSS(){
+  const sal=Math.max(0,+$('ssSal').value||0), amt=Math.max(0,Math.min(sal,+$('ssAmt').value||0));
+  const tax=t=>{const b=[[18200,0],[45000,.15],[135000,.30],[190000,.37],[Infinity,.45]];let r=0,p=0;for(const [u,rt] of b){if(t>p)r+=(Math.min(t,u)-p)*rt;p=u;}return r+t*.02;};
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-AU');
+  const saved=tax(sal)-tax(sal-amt), fundTax=amt*.15, net=saved-fundTax;
+  const sg=sal*.12, over=Math.max(0,sg+amt-32500);
+  $('ssTable').tBodies[0].innerHTML=[
+    ['Income tax you save',fmt(saved)],
+    ['Tax your fund takes (15%)','-'+fmt(fundTax)],
+    ['Extra tax saved overall','<b>'+fmt(net)+'</b>'],
+    ['Goes into your super','<b>'+fmt(amt-fundTax)+'</b>'],
+    ['Take-home pay drops by',fmt(amt-saved)]
+  ].map((r,i)=>'<tr'+(i===2?' class="hl"':'')+'><td>'+r[0]+'</td><td class="num">'+r[1]+'</td></tr>').join('');
+  $('ssNote').textContent=over>0?'Over the $32,500 limit by about '+fmt(over)+' (your employer pays about '+fmt(sg)+'). Extra above the limit is taxed at your normal rate, so lower the amount.':'Your employer pays about '+fmt(sg)+', so you have about '+fmt(32500-sg-amt)+' of limit left.';
+}
+['ssSal','ssAmt'].forEach(i=>$(i).addEventListener('input',renderSS));renderSS();
+
 
 /* ---------- working holiday ---------- */
 function whmTax(x){ if(x<=45000)return x*.15; if(x<=135000)return 6750+(x-45000)*.30; if(x<=190000)return 33750+(x-135000)*.37; return 54100+(x-190000)*.45; }
